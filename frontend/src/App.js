@@ -14,8 +14,11 @@ function App() {
 
       {!menu.active
         ? (
-          <Navbar />
-          <Home></Home>
+          <div>
+            <Navbar />
+            <Home></Home>
+          </div>
+
         )
         : (
           <Menu />
