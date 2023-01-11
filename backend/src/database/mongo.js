@@ -1,8 +1,14 @@
 const mongoose = require('mongoose');
+const { options } = require('../app');
 mongoose.set('strictQuery', false)
 
 mongoose
-    .connect(process.env.MONGO_DB)
+    .connect(
+        process.env.MONGO_DB,
+        {
+            maxPoolSize:  100,
+        }
+    )
     .then(() => {
         console.log('connected to db');
     })
