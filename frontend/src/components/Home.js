@@ -1,11 +1,35 @@
 import React, { useEffect, useState } from "react";
 
 const Home = (props) => {
-    useEffect(() =>{
-        navigator.geolocation.getCurrentPosition((position) => {
-            console.log([position.coords.latitude, position.coords.longitude])
+    const [firstTime, setFirstTime] = useState(false);
+
+    async function getCoordinates() {
+        setFirstTime(false)
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            let datos = {
+                method: "post",
+                body: JSON.stringify({
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                }),
+                mode: "cors",
+                headers: { "Access-Control-Allow-Origin": "*", "Content-type": "application/json" },
+            };
+            fetch("http://localhost:3001/addLocation", datos)
+                .then((res) => res.json())
+                .then((res) => {
+                    console.log(res);
+                });
         });
+    }
+
+    useEffect(() => {
+        setFirstTime(true);
     }, []);
+
+    useEffect(() => {
+        if (firstTime) getCoordinates();
+    }, [firstTime]);
 
     return (
         <div id="home">

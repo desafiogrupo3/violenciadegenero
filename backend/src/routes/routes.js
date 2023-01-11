@@ -3,6 +3,6 @@ const { addLocation } = require ('../controllers/locations.controller')
 
 const api = express.Router()
 
-api.post('/add', addLocation)
+api.post('/addLocation', addLocation)
 
 module.exports = api
