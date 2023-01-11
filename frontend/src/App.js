@@ -1,6 +1,9 @@
+
 import Navbar from './components/Navbar';
 import { useSelector } from 'react-redux';
 import Menu from './components/Menu';
+import Home from './components/Home';
+
 
 function App() {
 
@@ -8,9 +11,11 @@ function App() {
 
   return (
     <div className="App">
+
       {!menu.active
         ? (
           <Navbar />
+          <Home></Home>
         )
         : (
           <Menu />
