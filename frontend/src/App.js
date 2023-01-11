@@ -1,11 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Navbar from './components/Navbar';
+import { useSelector } from 'react-redux';
+import Menu from './components/Menu';
 import Home from './components/Home';
 
+
 function App() {
+
+  const menu = useSelector((state) => state.toggleMenu);
+
   return (
     <div className="App">
-      <Home></Home>
+
+      {!menu.active
+        ? (
+          <Navbar />
+          <Home></Home>
+        )
+        : (
+          <Menu />
+        )
+
+      }
+
     </div>
   );
 }

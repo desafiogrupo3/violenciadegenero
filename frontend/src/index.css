@@ -1,4 +1,7 @@
-@import url("./components/styles/Home.css");
+*{
+    margin: 0px;
+    padding: 0px;
+}
 
 body {
   margin: 0;
@@ -9,7 +12,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@import './styles/menu.css';
+@import './styles/navbar.css';
+@import url("./components/styles/Home.css");
