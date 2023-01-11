@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "./styles/Home.css"
 
 const Home = (props) => {
+    useEffect(() =>{
+        navigator.geolocation.getCurrentPosition((position) => {
+            console.log([position.coords.latitude, position.coords.longitude])
+        });
+    }, []);
 
     return (
         <div id="home">
