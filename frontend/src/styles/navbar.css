@@ -1,0 +1,43 @@
+.navbar{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+}
+
+.navbar-options-container{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.navbar-burguer svg{
+    width: 30px;
+    height: 30px;
+}
+
+.navbar-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 30px;
+    background-color: gray;
+    color: white;
+}
+
+.navbar-chat{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 999px;
+    background-color: gray;
+    color: white;
+}
