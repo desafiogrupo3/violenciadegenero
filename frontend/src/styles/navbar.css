@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-.navbar-options-container{
+.navbar-options-container {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -15,12 +15,12 @@
     width: 90%;
 }
 
-.navbar-burguer svg{
+.navbar-burguer svg {
     width: 30px;
     height: 30px;
 }
 
-.navbar-logo{
+.navbar-logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,14 +30,26 @@
     color: white;
 }
 
-.navbar-chat{
+.navbar-chat .icon {
+    font-size: 19.5px;
+    position: relative;
+    top: 3px;
+}
+
+.navbar-chat {
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 48px;
+    height: 48px;
     border-radius: 999px;
-    background-color: gray;
+    background-color: #E20613;
     color: white;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
