@@ -2,7 +2,8 @@
 import Navbar from './components/Navbar';
 import { useSelector } from 'react-redux';
 import Menu from './components/Menu';
-import Home from './components/Home';
+import { Rutas } from './router/rutas';
+import { BrowserRouter } from 'react-router-dom';
 
 
 function App() {
@@ -15,8 +16,10 @@ function App() {
       {!menu.active
         ? (
           <div>
-            <Navbar />
-            <Home />
+            <BrowserRouter>
+              <Navbar />
+              <Rutas />
+            </BrowserRouter>
           </div>
         )
         : (

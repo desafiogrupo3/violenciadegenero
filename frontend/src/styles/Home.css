@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 
-*{
+* {
     margin: 0;
     font-family: 'Montserrat';
 }
@@ -12,50 +12,64 @@ iframe {
     border: 0px;
 }
 
-#noestassola{
+#noestassola {
     margin-top: 16px;
     align-self: flex-start;
-    margin-left: 10px;
-    -webkit-text-stroke: thin;
-    font-size: 17px;
+    margin-left: 16px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
 }
 
 #textohome1 {
     text-align: left;
-    margin-left: 10px;
+    margin-left: 16px;
     font-size: 14px;
     margin-top: 8px;
     margin-bottom: 16px;
 }
 
 .apartados {
-    margin: 7px auto;
-    width: 94%;
+    margin: 7px 16px;
     background-color: #D3D3D3;
     height: 170px;
     -webkit-text-stroke: thin;
     font-size: 17px;
 }
 
-.apartados h4{
+.apartados h4 {
     margin-top: 24px;
     margin-left: 24px;
     display: flex;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.04em;
 }
 
 #salirrapido {
     position: fixed;
     bottom: 8px;
-    border: 2px solid black;
-    background-color: #D3D3D3;
-    font-size: large;
-    -webkit-text-stroke: thin;
+    border: none;
+    background-color: #9747FF;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    font-weight: 600;
     padding: 16px;
     right: 16px;
+    color: white;
+}
+
+#salirrapido:hover,
+#salirrapido:active {
+    background-color: black;
 }
 
 #accesibilidad {
-    -webkit-transform: rotate(-90deg);
     position: fixed;
     bottom: 68px;
     border: 2px solid black;
@@ -66,4 +80,5 @@ iframe {
     left: -57px;
     font-size: 24px;
     height: 80px;
+    transform: rotate(-90deg);
 }
