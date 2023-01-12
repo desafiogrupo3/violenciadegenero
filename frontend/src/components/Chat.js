@@ -5,7 +5,7 @@ const Menu = () => {
 
     return (
         <div className='chat'>
-            <div className='menu-close' onClick={handleClick}><AiOutlineClose /></div>
+            <div className='menu-close' ><AiOutlineClose /></div>
             <div>¡Hola! Bienvenida al chat de Cruz Roja Sierra Norte.</div>
         </div>
     )
