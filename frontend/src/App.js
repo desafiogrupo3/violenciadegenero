@@ -16,9 +16,8 @@ function App() {
         ? (
           <div>
             <Navbar />
-            <Home></Home>
+            <Home />
           </div>
-
         )
         : (
           <Menu />
