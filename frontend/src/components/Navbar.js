@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
-import { useDispatch } from 'react-redux'
-import { openMenu } from '../features/toggleMenu'
 import { BsFillChatFill } from 'react-icons/bs'
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import logo from '../img/logo_cruz_roja.jpg'
@@ -9,6 +7,7 @@ import Menu from './Menu'
 import Chat from './Chat'
 
 const Navbar = () => {
+
     const [show, setShow] = useState(false);
     const [isMenuOrChat, setIsMenuOrChat] = useState('menu');
     const [modalPosition, setModalPosition] = useState('start')
@@ -23,12 +22,6 @@ const Navbar = () => {
         setModalPosition('end')
         setIsMenuOrChat('chat')
     };
-
-    const dispatch = useDispatch()
-
-    function handleClick(e) {
-        dispatch(openMenu())
-    }
 
     return (
         <nav className='navbar'>

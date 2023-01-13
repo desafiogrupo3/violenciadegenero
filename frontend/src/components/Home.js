@@ -1,34 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { getCoordinates } from "../helpers/getCoordinates";
 
 const Home = (props) => {
     const [firstTime, setFirstTime] = useState(false);
-
-    async function getCoordinates() {
-        setFirstTime(false)
-        navigator.geolocation.getCurrentPosition(async (position) => {
-            let datos = {
-                method: "post",
-                body: JSON.stringify({
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                }),
-                mode: "cors",
-                headers: { "Access-Control-Allow-Origin": "*", "Content-type": "application/json" },
-            };
-            fetch("http://localhost:3001/addLocation", datos)
-                .then((res) => res.json())
-                .then((res) => {
-                    console.log(res);
-                });
-        });
-    }
 
     useEffect(() => {
         setFirstTime(true);
     }, []);
 
     useEffect(() => {
-        if (firstTime) getCoordinates();
+        if (firstTime) getCoordinates(setFirstTime);
     }, [firstTime]);
 
     return (
@@ -51,7 +32,6 @@ const Home = (props) => {
             </div>
 
             <div className="apartados">
-
                 <h4><strong>Familiares/Amigos</strong></h4>
             </div>
 
