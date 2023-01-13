@@ -3,8 +3,12 @@ import { AiOutlineMenu } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
 import { openMenu } from '../features/toggleMenu'
 import {BsFillChatFill} from 'react-icons/bs'
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 const Navbar = () => {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const dispatch = useDispatch()
 
@@ -17,8 +21,17 @@ const Navbar = () => {
             <div className='navbar-options-container'>
                 <div className='navbar-burguer' onClick={handleClick}><AiOutlineMenu /></div>
                 <div className='navbar-logo'>Logo</div>
-                <div className='navbar-chat'> <BsFillChatFill className="icon"/> Chat</div>
+                <div className='navbar-chat' onClick={handleShow}> <BsFillChatFill className="icon"/> Chat</div>
             </div>
+            <Offcanvas show={show} onHide={handleClose} placement="end">
+                <Offcanvas.Header>
+                    <button onClick={() => setShow(false)}>cerrar</button>
+                    <Offcanvas.Title>Profile settings</Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                    hola
+                </Offcanvas.Body>
+            </Offcanvas>
         </nav>
     )
 }
