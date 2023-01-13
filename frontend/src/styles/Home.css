@@ -12,39 +12,59 @@ iframe {
     border: 0px;
 }
 
-#noestassola {
+#noestassola h3 {
+    -webkit-text-stroke: thin;
     margin-top: 16px;
     align-self: flex-start;
     margin-left: 16px;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.02em;
+    color: #E20613;
 }
 
 #textohome1 {
+    -webkit-text-stroke: thin;
     text-align: left;
     margin-left: 16px;
-    font-size: 14px;
     margin-top: 8px;
     margin-bottom: 16px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
 }
 
 .apartados {
     margin: 7px 16px;
-    background-color: #D3D3D3;
-    height: 170px;
-    -webkit-text-stroke: thin;
-    font-size: 17px;
+    border: 2px solid #E20613;
+    height: 186px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.apartados h4 {
-    margin-top: 24px;
-    margin-left: 24px;
+.apartados div h4 {
+    margin-top: 13px;
+    margin-left: 16px;
     display: flex;
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 22px;
+    letter-spacing: 0.02em;
+}
+
+.apartados div p {
+    margin-top: 10px;
+    margin-left: 16px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
     letter-spacing: -0.04em;
 }
 
@@ -81,4 +101,22 @@ iframe {
     font-size: 24px;
     height: 80px;
     transform: rotate(-90deg);
+}
+
+button.vermas {
+    width: 156px;
+    height: 48px;
+    align-self: flex-end;
+    background-color: #E20613;
+    border: none;
+    margin-right: 18px;
+    margin-bottom: 18px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    -webkit-text-stroke: thin;
+    color: #FFFFFF;
 }

@@ -20,15 +20,11 @@ function App() {
               <Navbar />
               <Rutas />
             </BrowserRouter>
-
-            {/* <Home></Home> */}
           </div>
-
         )
         : (
           <Menu />
         )
-
       }
 
     </div>
