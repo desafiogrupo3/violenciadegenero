@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux'
 import { openMenu } from '../features/toggleMenu'
 import {BsFillChatFill} from 'react-icons/bs'
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import logo from '../img/logo_cruz_roja.jpg';
+import Chat from './Chat'
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
@@ -20,16 +22,16 @@ const Navbar = () => {
         <nav className='navbar'>
             <div className='navbar-options-container'>
                 <div className='navbar-burguer' onClick={handleClick}><AiOutlineMenu /></div>
-                <div className='navbar-logo'>Logo</div>
+                <div className='navbar-logo'> <img src={logo} alt="" /> </div>
                 <div className='navbar-chat' onClick={handleShow}> <BsFillChatFill className="icon"/> Chat</div>
             </div>
             <Offcanvas show={show} onHide={handleClose} placement="end">
                 <Offcanvas.Header>
                     <button onClick={() => setShow(false)}>cerrar</button>
-                    <Offcanvas.Title>Profile settings</Offcanvas.Title>
+                    <Offcanvas.Title>  </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                    hola
+                    <Chat/>
                 </Offcanvas.Body>
             </Offcanvas>
         </nav>

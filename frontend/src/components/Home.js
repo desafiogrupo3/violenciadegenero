@@ -43,25 +43,34 @@ const Home = (props) => {
 
             <div className="apartados">
                 <div>
-                <h4><strong>Derechos y recursos disponibles para las víctimas.</strong></h4>
-                <p>En este apartado encontrarás todos los recursos a tu disposición de forma totalmente confidencial.</p>
+                    <h4>Derechos y recursos disponibles para las víctimas.</h4>
+                    <p>En este apartado encontrarás todos los recursos a tu disposición de forma totalmente confidencial.</p>
                 </div>
-                
+
                 <button className="vermas">VER MÁS</button>
             </div>
 
             <div className="apartados">
+                <div>
+                    <h4>Ellas necesitan tu voz.</h4>
+                    <p>Si conoces alguna mujer que pueda estar siendo víctima de violencia de género tu ayuda puede salvarla.</p>
+                </div>
 
-                <h4><strong>Familiares/Amigos</strong></h4>
+                <button className="vermas">CÓMO ACTUAR</button>
             </div>
 
-            <div className="apartados">
-                <h4><strong>No sabe que es víctima</strong></h4>
+            <div className="apartados ultimo">
+                <div>
+                    <h4>¿Cómo detectar si eres víctima de violencia de género?</h4>
+                    <p>Señales que pueden dar respuesta a esta pregunta.</p>
+                </div>
+
+                <button className="vermas">QUIERO SABER MÁS</button>
             </div>
 
             <a href="https://www.amazon.es/"><button id="salirrapido"> <strong>SALIR RÁPIDO </strong>  </button></a>
 
-            <button id="accesibilidad"> <strong>Accesibilidad.</strong>  </button>
+            {/* <button id="accesibilidad"> <strong>Accesibilidad.</strong>  </button> */}
         </div>
     );
 };

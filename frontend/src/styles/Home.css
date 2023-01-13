@@ -48,11 +48,12 @@ iframe {
 }
 
 .apartados div h4 {
+    -webkit-text-stroke: thin;
     margin-top: 13px;
     margin-left: 16px;
     display: flex;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 18px;
     line-height: 22px;
     letter-spacing: 0.02em;
@@ -104,13 +105,14 @@ iframe {
 }
 
 button.vermas {
-    width: 156px;
+    width: fit-content;
     height: 48px;
     align-self: flex-end;
     background-color: #E20613;
     border: none;
     margin-right: 18px;
     margin-bottom: 18px;
+    padding: 13px 16px;
     font-weight: 500;
     font-size: 16px;
     line-height: 22px;
@@ -119,4 +121,8 @@ button.vermas {
     text-transform: uppercase;
     -webkit-text-stroke: thin;
     color: #FFFFFF;
+}
+
+.apartados.ultimo {
+    margin-bottom: 70px;
 }
