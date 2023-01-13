@@ -29,6 +29,11 @@
     color: white;
 }
 
+.navbar-logo img {
+    width: 118px;
+    height: 42px;
+}
+
 .navbar-chat .icon {
     font-size: 19.5px;
     position: relative;
@@ -51,4 +56,5 @@
     line-height: 22px;
     letter-spacing: 0.02em;
     text-transform: uppercase;
+    box-shadow: 0px 1px 5px 0px black;
 }

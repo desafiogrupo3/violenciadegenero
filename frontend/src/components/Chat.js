@@ -5,8 +5,11 @@ const Menu = () => {
 
     return (
         <div className='chat'>
-            <div className='menu-close' ><AiOutlineClose /></div>
-            <div>¡Hola! Bienvenida al chat de Cruz Roja Sierra Norte.</div>
+            <div>
+                <div className="msg">¡Hola! Bienvenida al chat de Cruz Roja Sierra Norte.</div>
+            </div>
+            
+            <input type="text" placeholder='Escribe aquí...' />
         </div>
     )
 }
