@@ -33,7 +33,7 @@ const Navbar = () => {
             <Offcanvas show={show} onHide={handleClose} placement={modalPosition}>
                 <Offcanvas.Header>
                     <button onClick={() => setShow(false)}>cerrar</button>
-                    <Offcanvas.Title>Profile settings</Offcanvas.Title>
+                    <Offcanvas.Title>  </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     {isMenuOrChat === 'menu'
