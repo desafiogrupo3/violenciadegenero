@@ -32,16 +32,7 @@ const Home = (props) => {
             </div>
 
             <div className="apartados">
-<<<<<<< HEAD
                 <h4><strong>Familiares/Amigos</strong></h4>
-=======
-                <div>
-                    <h4>Ellas necesitan tu voz.</h4>
-                    <p>Si conoces alguna mujer que pueda estar siendo víctima de violencia de género tu ayuda puede salvarla.</p>
-                </div>
-
-                <button className="vermas">CÓMO ACTUAR</button>
->>>>>>> b0e80aebd930aeac59f5fe3f432485c0cadbeebb
             </div>
 
             <div className="apartados ultimo">
