@@ -2,13 +2,27 @@ import React, { useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
 import { openMenu } from '../features/toggleMenu'
-import {BsFillChatFill} from 'react-icons/bs'
+import { BsFillChatFill } from 'react-icons/bs'
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import logo from '../img/logo_cruz_roja.jpg'
+import Menu from './Menu'
+import Chat from './Chat'
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
+    const [isMenuOrChat, setIsMenuOrChat] = useState('menu');
+    const [modalPosition, setModalPosition] = useState('start')
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShowMenu = () => {
+        setShow(true)
+        setModalPosition('start')
+        setIsMenuOrChat('menu')
+    };
+    const handleShowChat = () => {
+        setShow(true)
+        setModalPosition('end')
+        setIsMenuOrChat('chat')
+    };
 
     const dispatch = useDispatch()
 
@@ -19,17 +33,23 @@ const Navbar = () => {
     return (
         <nav className='navbar'>
             <div className='navbar-options-container'>
-                <div className='navbar-burguer' onClick={handleClick}><AiOutlineMenu /></div>
-                <div className='navbar-logo'>Logo</div>
-                <div className='navbar-chat' onClick={handleShow}> <BsFillChatFill className="icon"/> Chat</div>
+                <div className='navbar-burguer' onClick={handleShowMenu}><AiOutlineMenu /></div>
+                <div><img className='navbar-logo' src={logo} /></div>
+                <div className='navbar-chat' onClick={handleShowChat}> <BsFillChatFill className="icon" /> Chat</div>
             </div>
-            <Offcanvas show={show} onHide={handleClose} placement="end">
+            <Offcanvas show={show} onHide={handleClose} placement={modalPosition}>
                 <Offcanvas.Header>
                     <button onClick={() => setShow(false)}>cerrar</button>
                     <Offcanvas.Title>Profile settings</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                    hola
+                    {isMenuOrChat === 'menu'
+                        ? (
+                            <Menu />
+                        )
+                        : (
+                            <Chat />
+                        )}
                 </Offcanvas.Body>
             </Offcanvas>
         </nav>
