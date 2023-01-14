@@ -3,10 +3,11 @@ import Navbar from './Navbar'
 import { useDispatch } from 'react-redux'
 import { closeMenu } from '../features/toggleMenu'
 import { AiOutlineClose } from 'react-icons/ai'
-import { FiPhoneCall } from 'react-icons/fi'
+import { AiFillPhone } from 'react-icons/ai'
+import { BsFillChatFill } from 'react-icons/bs'
 
 
-const Menu = () => {
+const Menu = (props) => {
 
     const dispatch = useDispatch()
 
@@ -16,19 +17,24 @@ const Menu = () => {
 
     return (
         <div className='menu'>
-            <header>
-                <div className='menu-header'>
-                    <div className='menu-logo'>Logo</div>
-                    <div className='menu-close' onClick={handleClick}><AiOutlineClose /></div>
-                </div>
-            </header>
             <div className='menu-content'>
-                <div className='content-button'><span>Victimas</span></div>
-                <div className='content-button'><span>Conoce a Victima</span></div>
-                <div className='content-button'><span>No sabe que es Victima</span></div>
-                <div className='content-bottom'>
-                    <div className='phone'>
-                        <FiPhoneCall /> <span>Telefono de Ayuda</span>
+                <div className='content-button'><span>Derechos y recursos disponibles</span></div>
+                <div className='content-button'><span>Ellas necesitan tu voz</span></div>
+                <div className='content-button'><span>¿Cómo detectar si eres víctima?</span></div>
+                <div className='content-bottom-chat'>
+
+                    <span>Estamos aquí para ayudarte</span>
+                    <div className='iconchat' onClick={props.handleShowChat}> <BsFillChatFill className="icon" /> Chat</div>
+
+                </div>
+                <div className='content-bottom-phone'>
+                    <span>Si quieres, llámanos</span>
+                    <div className='phone'><AiFillPhone/></div>
+                </div>
+
+                <div className='content-bottom-voluntario'>
+                    <div className='voluntario'>
+                        <span>Hazte voluntario/a</span>
                     </div>
                 </div>
             </div>

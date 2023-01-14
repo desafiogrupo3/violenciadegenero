@@ -7,6 +7,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import logo from '../img/logo_cruz_roja.jpg'
 import Menu from './Menu'
 import Chat from './Chat'
+import { FiX } from 'react-icons/fi'
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
@@ -38,9 +39,25 @@ const Navbar = () => {
                 <div className='navbar-chat' onClick={handleShowChat}> <BsFillChatFill className="icon" /> Chat</div>
             </div>
             <Offcanvas show={show} onHide={handleClose} placement={modalPosition}>
-                <Offcanvas.Header>
-                    <button onClick={() => setShow(false)}>cerrar</button>
-                    <Offcanvas.Title>  </Offcanvas.Title>
+                <Offcanvas.Header className={"header" + isMenuOrChat}>
+                    {isMenuOrChat === 'menu'
+                        ? (
+                            <div>
+                                <div id="cerrarmenu" onClick={handleClose}><FiX /></div>
+                                <div><img className='navbar-logo' src={logo} /></div>
+                            </div>
+                        )
+                        : (
+                            <div>
+                                <div>
+                                    <div className='iconchat'> <BsFillChatFill className="icon" /> Chat</div>
+                                    <Offcanvas.Title>Ahora estás chateando</Offcanvas.Title>
+                                </div>
+
+                                <div onClick={handleClose} id="cerrarchat"><FiX /></div>
+                            </div>
+                        )}
+
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     {isMenuOrChat === 'menu'
