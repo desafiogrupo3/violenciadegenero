@@ -59,13 +59,22 @@ const Home = (props) => {
                 <button className="vermas">CÓMO ACTUAR</button>
             </div>
 
-            <div className="apartados ultimo">
+            <div className="apartados">
                 <div>
                     <h4>¿Cómo detectar si eres víctima de violencia de género?</h4>
                     <p>Señales que pueden dar respuesta a esta pregunta.</p>
                 </div>
 
                 <button className="vermas">QUIERO SABER MÁS</button>
+            </div>
+
+            <div className="apartados ultimo">
+                <div>
+                    <h4>Necesitamos tu ayuda como voluntario/a de Cruz Roja</h4>
+                    <p>Puedes ayudarnos de muchas maneras diferentes.</p>
+                </div>
+
+                <button className="vermas">COMO COLABORAR</button>
             </div>
 
             <a href="https://www.amazon.es/"><button id="salirrapido"> <strong>SALIR RÁPIDO </strong>  </button></a>
