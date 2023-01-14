@@ -58,3 +58,88 @@
     text-transform: uppercase;
     box-shadow: 0px 1px 5px 0px black;
 }
+
+.offcanvas-header.headerchat {
+    background-color: #E20613;
+    color: white;
+}
+
+div.headerchat.offcanvas-header>div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.headerchat.offcanvas-header .offcanvas-title {
+    line-height: 22px;
+    -webkit-text-stroke: thin;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+div.iconchat {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    background-color: #E20613;
+    color: white;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    border: 1px solid white;
+}
+
+div.iconchat .icon {
+    font-size: 19.5px;
+    position: relative;
+    top: 3px;
+}
+
+#cerrarchat svg,
+#cerrarmenu svg {
+    width: 31px;
+    height: 31px;
+}
+
+#cerrarmenu {
+    background-color: #E20613;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+div.headerchat.offcanvas-header>div>div:nth-child(1) {
+    display: flex;
+    align-items: center;
+}
+
+div.headermenu.offcanvas-header>div {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: space-between;
+}
+
+div.headermenu.offcanvas-header>div img {
+    width: 195px;
+    height: 69px;
+    margin-right: 20px;
+}
+
+div.headermenu.offcanvas-header {
+    padding: 0;
+}
