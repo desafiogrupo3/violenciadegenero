@@ -16,3 +16,6 @@ body {
 @import './styles/navbar.css';
 @import './styles/Home.css';
 @import './styles/chat.css';
+@import './styles/recursos.css';
+@import './styles/voluntarios.css';
+

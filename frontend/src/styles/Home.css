@@ -52,6 +52,7 @@ iframe {
     -webkit-text-stroke: thin;
     margin-top: 13px;
     margin-left: 16px;
+    margin-right: 16px;
     display: flex;
     font-style: normal;
     font-weight: 600;
@@ -63,6 +64,7 @@ iframe {
 .apartados div p {
     margin-top: 10px;
     margin-left: 16px;
+    margin-right: 16px;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -126,4 +128,8 @@ button.vermas {
 
 .apartados.ultimo {
     margin-bottom: 70px;
+}
+
+.apartados a {
+    display: contents;
 }
