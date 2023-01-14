@@ -1,7 +1,7 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
 
-const Menu = () => {
+const Chat = () => {
 
     return (
         <div className='chat'>
@@ -14,4 +14,4 @@ const Menu = () => {
     )
 }
 
-export default Menu
+export default Chat

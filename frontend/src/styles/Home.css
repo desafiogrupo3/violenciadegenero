@@ -29,6 +29,7 @@ iframe {
     -webkit-text-stroke: thin;
     text-align: left;
     margin-left: 16px;
+    margin-right: 16px;
     margin-top: 8px;
     margin-bottom: 16px;
     font-style: normal;
@@ -41,7 +42,7 @@ iframe {
 .apartados {
     margin: 7px 16px;
     border: 2px solid #E20613;
-    height: 186px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -51,9 +52,10 @@ iframe {
     -webkit-text-stroke: thin;
     margin-top: 13px;
     margin-left: 16px;
+    margin-right: 16px;
     display: flex;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 18px;
     line-height: 22px;
     letter-spacing: 0.02em;
@@ -62,6 +64,7 @@ iframe {
 .apartados div p {
     margin-top: 10px;
     margin-left: 16px;
+    margin-right: 16px;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -125,4 +128,8 @@ button.vermas {
 
 .apartados.ultimo {
     margin-bottom: 70px;
+}
+
+.apartados a {
+    display: contents;
 }
