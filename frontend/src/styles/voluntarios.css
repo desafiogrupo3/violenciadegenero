@@ -19,7 +19,7 @@
     margin-top: 8px;
 }
 
-#form-voluntarios button {
+#form-voluntarios button, #gracias-volver button {
     height: 48px;
     background-color: #E20613;
     border: none;
@@ -33,4 +33,17 @@
     text-transform: uppercase;
     -webkit-text-stroke: thin;
     color: #FFFFFF;
+}
+
+
+#form-voluntarios a {
+    display: contents;
+}
+
+#gracias-volver {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+    margin: 24px;
 }

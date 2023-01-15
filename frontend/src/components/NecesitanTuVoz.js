@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from 'react-router-dom';
-import foto from '../img/foto2.png'
+import foto from '../img/foto2.png';
 
 const NecesitanTuVoz = (props) => {
     return (

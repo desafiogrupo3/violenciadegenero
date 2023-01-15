@@ -64,7 +64,7 @@ const Home = (props) => {
                     <h4>¿Cómo detectar si eres víctima de violencia de género?</h4>
                     <p>Señales que pueden dar respuesta a esta pregunta.</p>
                 </div>
-                <NavLink to='/derechos'><button className="vermas">QUIERO SABER MÁS</button></NavLink>
+                <NavLink to='/detectarsieresvictima'><button className="vermas">QUIERO SABER MÁS</button></NavLink>
             </div>
 
             <div className="apartados ultimo">

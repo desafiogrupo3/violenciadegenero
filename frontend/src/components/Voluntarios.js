@@ -5,7 +5,7 @@ import foto from '../img/foto2.png'
 const Voluntarios = (props) => {
     return (
         <div>
-            <img id="fotoencabezado" src={foto} alt="" width={"100%"}/>
+            <img id="fotoencabezado" src={foto} alt="" width={"100%"} />
             <div id="noestassola">
                 <h3>HAZTE VOLUNTARIO/A DE CRUZ ROJA</h3>
             </div>
@@ -14,16 +14,18 @@ const Voluntarios = (props) => {
                 <p>Rellena el siguiente formulario y recibirás toda la información en tu e-mail.</p>
             </div>
             <div id="form-voluntarios">
-                <label> 
-                   Nombre
+                <label>
+                    Nombre
                 </label>
-                <input type="text" placeholder="Escribe aquí tu nombre"/>
+                <input type="text" placeholder="Escribe aquí tu nombre" />
 
-                <label> 
-                   E-mail
+                <label>
+                    E-mail
                 </label>
-                <input type="text" placeholder="nombre@email.com"/>
-                <button>ENVIAR FORMULARIO</button>
+                <input type="text" placeholder="nombre@email.com" />
+                <NavLink to='/muchasgracias'>
+                    <button>ENVIAR FORMULARIO</button>
+                </NavLink>
             </div>
             <a href="https://www.amazon.es/"><button id="salirrapido"> <strong>SALIR RÁPIDO </strong>  </button></a>
 

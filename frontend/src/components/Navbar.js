@@ -63,7 +63,7 @@ const Navbar = () => {
                 <Offcanvas.Body>
                     {isMenuOrChat === 'menu'
                         ? (
-                            <Menu />
+                            <Menu handleShowChat={handleShowChat} handleClose={handleClose}/>
                         )
                         : (
                             <Chat />

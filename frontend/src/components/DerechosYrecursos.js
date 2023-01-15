@@ -39,7 +39,7 @@ const derechosYrecursos = () => {
                     <h4>Conoce tus derechos</h4>
                     <p>Tus derechos como mujer son esenciales. Conoce cuáles son y cómo Cruz Roja puede ayudarte.</p>
                 </div>
-                <NavLink to='/derechos'><button className="vermas">CONOCER MIS DERECHOS</button></NavLink>
+                <NavLink to='/conocetusderechos'><button className="vermas">CONOCER MIS DERECHOS</button></NavLink>
             </div>
 
             <a href="https://www.amazon.es/"><button id="salirrapido"> <strong>SALIR RÁPIDO </strong>  </button></a>
