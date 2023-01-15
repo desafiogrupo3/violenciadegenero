@@ -5,6 +5,7 @@ import { closeMenu } from '../features/toggleMenu'
 import { AiOutlineClose } from 'react-icons/ai'
 import { AiFillPhone } from 'react-icons/ai'
 import { BsFillChatFill } from 'react-icons/bs'
+import { NavLink } from 'react-router-dom';
 
 
 const Menu = (props) => {
@@ -18,25 +19,26 @@ const Menu = (props) => {
     return (
         <div className='menu'>
             <div className='menu-content'>
-                <div className='content-button'><span>Derechos y recursos disponibles</span></div>
-                <div className='content-button'><span>Ellas necesitan tu voz</span></div>
-                <div className='content-button'><span>¿Cómo detectar si eres víctima?</span></div>
-                <div className='content-bottom-chat'>
+
+                <NavLink to='/derechos'><div className='content-button' onClick={() => props.handleClose()}><span>Derechos y recursos disponibles</span></div></NavLink>
+                <NavLink to='/necesitantuvoz'><div className='content-button' onClick={() => props.handleClose()}><span>Ellas necesitan tu voz</span></div></NavLink>
+                <NavLink to='/detectarsieresvictima'><div className='content-button' onClick={() => props.handleClose()}><span>¿Cómo detectar si eres víctima?</span></div></NavLink>
+                <div className='content-bottom-chat' onClick={() => { props.handleShowChat(); }}>
 
                     <span>Estamos aquí para ayudarte</span>
-                    <div className='iconchat' onClick={props.handleShowChat}> <BsFillChatFill className="icon" /> Chat</div>
+                    <div className='iconchat'> <BsFillChatFill className="icon" /> Chat</div>
 
                 </div>
                 <div className='content-bottom-phone'>
                     <span>Si quieres, llámanos</span>
-                    <div className='phone'><AiFillPhone/></div>
+                    <div className='phone'><AiFillPhone /></div>
                 </div>
 
-                <div className='content-bottom-voluntario'>
-                    <div className='voluntario'>
+                <NavLink to='/voluntarios'><div className='content-bottom-voluntario'>
+                    <div className='voluntario' onClick={() => props.handleClose()}>
                         <span>Hazte voluntario/a</span>
                     </div>
-                </div>
+                </div></NavLink>
             </div>
         </div>
     )

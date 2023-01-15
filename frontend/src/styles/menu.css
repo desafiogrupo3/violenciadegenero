@@ -145,6 +145,11 @@
     transform: rotate(90deg);
 }
 
+.menu-content a {
+    text-decoration: none;
+    color: black;
+}
+
 .content-bottom-voluntario {
     background-color: #E20613;
     height: 48px;

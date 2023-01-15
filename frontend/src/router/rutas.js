@@ -5,6 +5,9 @@ import DerechosYrecursos from '../components/DerechosYrecursos'
 import RecursosSN from '../components/RecursosSierraNorte'
 import NecesitanTuVoz from '../components/NecesitanTuVoz'
 import Voluntarios from '../components/Voluntarios'
+import ConoceTusDerechos from '../components/ConoceTusDerechos'
+import Detectar from '../components/Detectar'
+import MuchasGracias from '../components/MuchasGracias'
 
 export const Rutas = () => {
 
@@ -16,7 +19,10 @@ export const Rutas = () => {
                 <Route path="/derechos" element={<DerechosYrecursos />} />
                 <Route path="/recursossierranorte" element={<RecursosSN />} />
                 <Route path="/necesitantuvoz" element={<NecesitanTuVoz />} />
+                <Route path="/detectarsieresvictima" element={<Detectar />} />
+                <Route path="/conocetusderechos" element={<ConoceTusDerechos />} />
                 <Route path="/voluntarios" element={<Voluntarios />} />
+                <Route path="/muchasgracias" element={<MuchasGracias />} />
             </Routes>
         </div>
     )
