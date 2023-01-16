@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { BsFillChatFill } from 'react-icons/bs'
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import logo from '../img/logo_cruz_roja.jpg'
+import logo from '../img/logo_cruz_roja.png'
 import Menu from './Menu'
 import Chat from './Chat'
+import { FiX } from 'react-icons/fi'
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -27,18 +29,34 @@ const Navbar = () => {
         <nav className='navbar'>
             <div className='navbar-options-container'>
                 <div className='navbar-burguer' onClick={handleShowMenu}><AiOutlineMenu /></div>
-                <div><img className='navbar-logo' src={logo} /></div>
+                <div><NavLink to='/home'><img className='navbar-logo' src={logo} /></NavLink></div>
                 <div className='navbar-chat' onClick={handleShowChat}> <BsFillChatFill className="icon" /> Chat</div>
             </div>
             <Offcanvas show={show} onHide={handleClose} placement={modalPosition}>
-                <Offcanvas.Header>
-                    <button onClick={() => setShow(false)}>cerrar</button>
-                    <Offcanvas.Title>  </Offcanvas.Title>
+                <Offcanvas.Header className={"header" + isMenuOrChat}>
+                    {isMenuOrChat === 'menu'
+                        ? (
+                            <div>
+                                <div id="cerrarmenu" onClick={handleClose}><FiX /></div>
+                                <div><img className='navbar-logo' src={logo} /></div>
+                            </div>
+                        )
+                        : (
+                            <div>
+                                <div>
+                                    <div className='iconchat'> <BsFillChatFill className="icon" /> Chat</div>
+                                    <Offcanvas.Title>Ahora estás chateando</Offcanvas.Title>
+                                </div>
+
+                                <div onClick={handleClose} id="cerrarchat"><FiX /></div>
+                            </div>
+                        )}
+
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     {isMenuOrChat === 'menu'
                         ? (
-                            <Menu />
+                            <Menu handleShowChat={handleShowChat} handleClose={handleClose}/>
                         )
                         : (
                             <Chat />

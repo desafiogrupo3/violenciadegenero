@@ -1,0 +1,22 @@
+.apartados2 {
+    -webkit-text-stroke: thin;
+    text-align: left;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.02em;
+    display: flex;
+}
+.apartados2 p {
+    border-bottom: 5px solid #E20613;
+    width: fit-content;
+}
+
+.apartados2.ultimo {
+    margin-bottom: 60px;
+}

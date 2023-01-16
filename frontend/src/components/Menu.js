@@ -3,10 +3,12 @@ import Navbar from './Navbar'
 import { useDispatch } from 'react-redux'
 import { closeMenu } from '../features/toggleMenu'
 import { AiOutlineClose } from 'react-icons/ai'
-import { FiPhoneCall } from 'react-icons/fi'
+import { AiFillPhone } from 'react-icons/ai'
+import { BsFillChatFill } from 'react-icons/bs'
+import { NavLink } from 'react-router-dom';
 
 
-const Menu = () => {
+const Menu = (props) => {
 
     const dispatch = useDispatch()
 
@@ -16,21 +18,27 @@ const Menu = () => {
 
     return (
         <div className='menu'>
-            <header>
-                <div className='menu-header'>
-                    <div className='menu-logo'>Logo</div>
-                    <div className='menu-close' onClick={handleClick}><AiOutlineClose /></div>
-                </div>
-            </header>
             <div className='menu-content'>
-                <div className='content-button'><span>Victimas</span></div>
-                <div className='content-button'><span>Conoce a Victima</span></div>
-                <div className='content-button'><span>No sabe que es Victima</span></div>
-                <div className='content-bottom'>
-                    <div className='phone'>
-                        <FiPhoneCall /> <span>Telefono de Ayuda</span>
-                    </div>
+
+                <NavLink to='/derechos'><div className='content-button' onClick={() => props.handleClose()}><span>Derechos y recursos disponibles</span></div></NavLink>
+                <NavLink to='/necesitantuvoz'><div className='content-button' onClick={() => props.handleClose()}><span>Ellas necesitan tu voz</span></div></NavLink>
+                <NavLink to='/detectarsieresvictima'><div className='content-button' onClick={() => props.handleClose()}><span>¿Cómo detectar si eres víctima?</span></div></NavLink>
+                <div className='content-bottom-chat' onClick={() => { props.handleShowChat(); }}>
+
+                    <span>Estamos aquí para ayudarte</span>
+                    <div className='iconchat'> <BsFillChatFill className="icon" /> Chat</div>
+
                 </div>
+                <div className='content-bottom-phone'>
+                    <span>Si quieres, llámanos</span>
+                    <div className='phone'><AiFillPhone /></div>
+                </div>
+
+                <NavLink to='/voluntarios'><div className='content-bottom-voluntario'>
+                    <div className='voluntario' onClick={() => props.handleClose()}>
+                        <span>Hazte voluntario/a</span>
+                    </div>
+                </div></NavLink>
             </div>
         </div>
     )
