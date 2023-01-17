@@ -62,9 +62,11 @@
     justify-content: center;
     align-items: center;
     background-color: gray;
+    border-radius: 2px;
 }
 
 #form-voluntarios .options button.selected{
     background-color: #E20613;
     color: black;
+    border-radius: 2px;
 }
