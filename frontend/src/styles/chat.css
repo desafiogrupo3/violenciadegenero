@@ -1,13 +1,13 @@
 div.chat {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 80% 20%;
-    height: 100%;
-}
-
-div.msgsContainer {
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+
+.chat div.msgsContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 124px;
 }
 
 .sara {
@@ -20,6 +20,22 @@ div.msgsContainer {
     line-height: 22px;
     padding: 17px 32px;
     margin-top: 16px;
+}
+
+div.siOno {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-around;
+}
+
+div.siOno button {
+    background-color:#E4656C;
+    width: 55px;
+    height: 55px;
+    border: none;
+    color: white;
+    border-radius: 100%;
+    font-weight: 600;
 }
 
 .user {
@@ -36,14 +52,23 @@ div.msgsContainer {
     width: fit-content;
 }
 
+div.userText{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    align-self: center;
+    bottom: 20px;
+    width: 350px;
+}
+
 div.chat input {
     height: 80px;
     background: #EEEEEE;
     border-radius: 4px;
     border: none;
-    align-self: end;
     padding-left: 16px;
     padding-bottom: 33px;
+    width: 100%;
 }
 
 /* div.chat input::placeholder {
