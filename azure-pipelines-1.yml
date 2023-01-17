@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-    - main
+    - develop
 stages:
 - stage: __default
   jobs:
@@ -13,13 +13,17 @@ stages:
       inputs:
         versionSpec: '18.x'
       displayName: 'Install Node.js'
+    - task: DownloadSecureFile@1
+      name: EnvFile
+      inputs:
+        secureFile: '.env'
     - task: CmdLine@2
       displayName: 'npm install and build'
       inputs:
         script: |
+          cp $(EnvFile.secureFilePath) backend/.env
           cd backend/
-          npm install 
-          npm run build --loglevel verbose
+          npm install
     - task: ArchiveFiles@2
       inputs:
         rootFolderOrFile: 'backend/'
@@ -32,3 +36,4 @@ stages:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: '$(Build.BuildId).zip'
         publishLocation: 'Container'
+
