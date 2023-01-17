@@ -18,7 +18,6 @@ steps:
   displayName: 'Install Node.js'
 
 - script: 
-    cd frontend/
     npm install
     npm run build --loglevel verbose
   displayName: 'npm install and build'
