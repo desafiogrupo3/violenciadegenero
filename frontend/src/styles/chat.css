@@ -5,7 +5,12 @@ div.chat {
     height: 100%;
 }
 
-.msg {
+div.msgsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.sara {
     background: #FFFFFF;
     border: 0.72973px solid #E20613;
     border-radius: 0px 41.5946px 41.5946px 0px;
@@ -14,6 +19,21 @@ div.chat {
     font-size: 16px;
     line-height: 22px;
     padding: 17px 32px;
+    margin-top: 16px;
+}
+
+.user {
+    background: #E4656C;
+    color: white;
+    border-radius: 41.59px 41.5946px 0px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 17px 32px;
+    align-self: flex-end;
+    margin-top: 16px;
+    width: fit-content;
 }
 
 div.chat input {
