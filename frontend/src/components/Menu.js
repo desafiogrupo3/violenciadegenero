@@ -29,10 +29,12 @@ const Menu = (props) => {
                     <div className='iconchat'> <BsFillChatFill className="icon" /> Chat</div>
 
                 </div>
-                <div className='content-bottom-phone'>
-                    <span>Si quieres, llámanos</span>
-                    <div className='phone'><AiFillPhone /></div>
-                </div>
+                <a href="tel:644435021">
+                    <div className='content-bottom-phone'>
+                        <span>Si quieres, llámanos</span>
+                        <div className='phone'><AiFillPhone /></div>
+                    </div>
+                </a>
 
                 <NavLink to='/voluntarios'><div className='content-bottom-voluntario'>
                     <div className='voluntario' onClick={() => props.handleClose()}>

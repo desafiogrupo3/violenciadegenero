@@ -133,3 +133,8 @@ button.vermas {
 .apartados a {
     display: contents;
 }
+
+#home > div:nth-child(1) > div {
+    width: 100%;
+    height: 200px;
+}
