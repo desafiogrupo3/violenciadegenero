@@ -45,24 +45,27 @@ function Map(props) {
 
     const iconAzul = new L.Icon({
         iconUrl: require('../img/chinchetaazul.png'),
+        shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
         iconSize: [40, 45], // tamaño del icono
-        shadowSize: [50, 64], // tamaño de la sombra
+        shadowSize: [65, 38], // tamaño de la sombra
         iconAnchor: [20, 40], // punto del icono que corresponde a la posición del marcador
         popupAnchor: [0, -40] // punto relativo al marcador desde donde se deberá abrir el popup
     });
 
     const iconVerde = new L.Icon({
         iconUrl: require('../img/chinchetaverde.png'),
+        shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
         iconSize: [40, 45], // tamaño del icono
-        shadowSize: [50, 64], // tamaño de la sombra
+        shadowSize: [65, 38], // tamaño de la sombra
         iconAnchor: [20, 40], // punto del icono que corresponde a la posición del marcador
         popupAnchor: [0, -40] // punto relativo al marcador desde donde se deberá abrir el popup
     });
 
     const iconRojo = new L.Icon({
         iconUrl: require('../img/chinchetaroja.png'),
+        shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
         iconSize: [40, 45], // tamaño del icono
-        shadowSize: [50, 64], // tamaño de la sombra
+        shadowSize: [65, 38], // tamaño de la sombra
         iconAnchor: [20, 40], // punto del icono que corresponde a la posición del marcador
         popupAnchor: [0, -40] // punto relativo al marcador desde donde se deberá abrir el popup
     });
@@ -77,7 +80,8 @@ function Map(props) {
             <Marker position={lugar.coordenadas} key={i} icon={iconselect}>
                 <Popup>
                     <div>
-                        {lugar.direccion}
+                        <p>Dirección: {lugar.direccion}</p>
+                        <p>Teléfono: <a href={"tel:" + lugar.telefono}>{lugar.telefono}</a></p>
                     </div>
                 </Popup>
             </Marker>
