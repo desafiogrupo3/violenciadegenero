@@ -94,6 +94,32 @@ const Chat = () => {
         }
     }
 
+    useEffect(() => {
+        isMsgSent && respuesta(2)
+        setIsMsgSent(false)
+    }, [isMsgSent])
+
+    useEffect(() => {
+        document.getElementsByClassName("offcanvas-body")[0].scrollTo(0, 100000000000000)
+    }, [mensajes])
+
+    function respondeSi() {
+        setMensajes(mensajes.concat([{ msg: "Si", from: "user" }, { msg: preguntas[1], from: "sara" }]))
+        document.getElementsByClassName("siOno")[document.getElementsByClassName("siOno").length - 1].style.display = 'none'
+    }
+    function respondeNo() {
+        setMensajes(mensajes.concat([{ msg: "No", from: "user" }, { msg: "¿Hay alguna otra cosa en la que te pueda ayudar? ", from: "sara" }]))
+        document.getElementsByClassName("siOno")[document.getElementsByClassName("siOno").length - 1].style.display = 'none'
+    }
+
+    function pinstaSiOno() {
+        return (
+            <div className="siOno">
+                <button onClick={respondeSi}>SI</button>
+                <button onClick={respondeNo}>N0</button>
+            </div>
+        )
+    }
     function respuesta(res) {
         switch (res) {
             case 0:
