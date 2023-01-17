@@ -47,7 +47,7 @@ const NecesitanTuVoz = (props) => {
                 <NavLink to='/derechos'><button className="vermas">QUIERO SERVIR DE APOYO</button></NavLink>
             </div>
 
-            <a href="https://www.amazon.es/"><button id="salirrapido"> <strong>SALIR RÁPIDO </strong>  </button></a>
+            <a href="https://www.amazon.es/"><button id="salirrapido"> <strong>SALIR RÁPIDO</strong>  </button></a>
 
             {/* <button id="accesibilidad"> <strong>Accesibilidad.</strong>  </button> */}
         </div>
