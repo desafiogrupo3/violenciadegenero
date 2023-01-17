@@ -1,36 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from 'react-router-dom';
+import { getCoordinates } from "../helpers/getCoordinates";
 import Map from "./Map";
 
 const Home = (props) => {
     const [firstTime, setFirstTime] = useState(false);
-
-    async function getCoordinates() {
-        setFirstTime(false)
-        navigator.geolocation.getCurrentPosition(async (position) => {
-            let datos = {
-                method: "post",
-                body: JSON.stringify({
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                }),
-                mode: "cors",
-                headers: { "Access-Control-Allow-Origin": "*", "Content-type": "application/json" },
-            };
-            fetch("http://localhost:3001/addLocation", datos)
-                .then((res) => res.json())
-                .then((res) => {
-                    console.log(res);
-                });
-        });
-    }
 
     useEffect(() => {
         setFirstTime(true);
     }, []);
 
     useEffect(() => {
-        if (firstTime) getCoordinates();
+        if (firstTime) getCoordinates(setFirstTime);
     }, [firstTime]);
 
     return (
@@ -58,7 +39,8 @@ const Home = (props) => {
                     <h4>Ellas necesitan tu voz.</h4>
                     <p>Si conoces alguna mujer que pueda estar siendo víctima de violencia de género tu ayuda puede salvarla.</p>
                 </div>
-                <NavLink to='/necesitantuvoz'><button className="vermas">CÓMO ACTUAR</button></NavLink>
+
+                <button className="vermas">CÓMO ACTUAR</button>
             </div>
 
             <div className="apartados">

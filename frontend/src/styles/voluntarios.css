@@ -47,3 +47,26 @@
     align-items: stretch;
     margin: 24px;
 }
+
+.options{
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 85%;
+}
+
+#form-voluntarios .options button.option{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    border-radius: 2px;
+}
+
+#form-voluntarios .options button.selected{
+    background-color: #E20613;
+    color: black;
+    border-radius: 2px;
+}
