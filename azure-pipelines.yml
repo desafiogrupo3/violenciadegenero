@@ -17,7 +17,7 @@ steps:
     checkLatest: true
   displayName: 'Install Node.js'
 
-- script:
+- script: 
     cd frontend/
     npm install
     npm run build --loglevel verbose
