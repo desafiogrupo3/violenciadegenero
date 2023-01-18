@@ -38,7 +38,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'DockerVG'
-        repository: 'gonzalobordas/desafio-grupo3'
+        repository: 'gonzalobordas/frontend'
         command: 'buildAndPush'
         buildContext: 'frontend/'
         Dockerfile: 'Dockerfiles/frontend.Dockerfile'
