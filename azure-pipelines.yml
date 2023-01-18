@@ -41,4 +41,4 @@ stages:
         repository: 'gonzalobordas/frontend'
         command: 'buildAndPush'
         buildContext: 'frontend/'
-        Dockerfile: 'violenciadegenero/Dockerfiles/frontend.Dockerfile'
+        Dockerfile: 'Dockerfiles/frontend.Dockerfile'
