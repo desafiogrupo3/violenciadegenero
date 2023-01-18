@@ -18,7 +18,7 @@ stages:
       inputs:
         script: |
           cd frontend/
-          npm install 
+          npm install --legacy-peer-deps --global-style
           npm run build --loglevel verbose
           echo "--------------------------"
           echo $(System.DefaultWorkingDirectory)
