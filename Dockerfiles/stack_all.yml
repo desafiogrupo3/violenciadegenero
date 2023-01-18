@@ -3,7 +3,7 @@ version: '3.1'
 services:
 
   backend:
-    image: javo3000/javoserver:135
+    image: gonzalobordas/backend
     ports:
       - 3001:3001
     networks:
@@ -14,7 +14,7 @@ services:
       #- db
 
   frontend:
-    image: javo3000/javoclient:139
+    image: gonzalobordas/frontend
     ports: 
       - 3000:80
     networks:
