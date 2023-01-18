@@ -34,3 +34,11 @@ stages:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: '$(Build.BuildId).zip'
         publishLocation: 'Container'
+
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'DockerVG'
+        repository: 'gonzalobordas/desafio-grupo3'
+        command: 'buildAndPush'
+        buildContext: 'frontend/'
+        Dockerfile: 'Dockerfiles/frontend.Dockerfile'
