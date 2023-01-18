@@ -51,7 +51,13 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='copyright'>
-
+                    <p>©Cruz Roja Española 2023. Todos los derechos reservados. Pulse aquí para consultar los ASPECTOS LEGALES</p>
+                    <p>Agencia de Colocación autorizada con el número 9900000098</p>
+                    <div className='politicas'>
+                        <p>Contacto</p>
+                        <p>Política de privacidad</p>
+                        <p>Política de Cookies</p>
+                    </div>
                 </div>
             </section>
             <section className='otros'>
@@ -73,7 +79,7 @@ const Footer = () => {
                     <img className='icon' src={iconFacebook} />
                     <img className='icon' src={iconTwitter} />
                     <img className='icon' src={iconYoutube} />
-                    <img className='icon' src={iconInsta} /> 
+                    <img className='icon' src={iconInsta} />
                     <img className='icon' src={iconSocialMedia} />
                 </div>
             </section>
