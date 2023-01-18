@@ -34,7 +34,6 @@ stages:
         publishLocation: 'Container'
     - task: Docker@2
       inputs:
-        script:
         containerRegistry: 'DockerVG'
         repository: 'gonzalobordas/frontend'
         command: 'buildAndPush'
