@@ -39,8 +39,8 @@ const Home = (props) => {
                     <h4>Ellas necesitan tu voz.</h4>
                     <p>Si conoces alguna mujer que pueda estar siendo víctima de violencia de género tu ayuda puede salvarla.</p>
                 </div>
-
-                <button className="vermas">CÓMO ACTUAR</button>
+    
+                <NavLink to='/necesitantuvoz'><button className="vermas">CÓMO ACTUAR</button></NavLink>
             </div>
 
             <div className="apartados">

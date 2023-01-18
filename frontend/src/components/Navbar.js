@@ -59,7 +59,7 @@ const Navbar = () => {
                             <Menu handleShowChat={handleShowChat} handleClose={handleClose}/>
                         )
                         : (
-                            <Chat />
+                            <Chat handleClose={handleClose}/>
                         )}
                 </Offcanvas.Body>
             </Offcanvas>
