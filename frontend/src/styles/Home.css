@@ -1,11 +1,41 @@
 #home {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 * {
     margin: 0;
     font-family: 'Montserrat';
+}
+
+#chatdeskpot {
+    position: fixed;
+    right: -174px;
+    top: 300px;
+    background: #E20613;
+    box-shadow: -9px 7px 28px rgb(0 0 0 / 30%);
+    border-radius: 8px 8px 0px 0px;
+    color: white;
+    border: none;
+    width: 420px;
+    height: 70px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    transform: rotate(-90deg);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#chatdeskpot:hover{
+    color: black;
+}
+
+.rSn #apartadoscontainer {
+    display: none;
 }
 
 iframe {
@@ -23,6 +53,41 @@ iframe {
     line-height: 26px;
     letter-spacing: 0.02em;
     color: #E20613;
+}
+
+#tel016 {
+    background-color: #E20613;
+    color: white;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    width: fit-content;
+    height: fit-content;
+    padding: 12px;
+    padding-bottom: 0;
+    letter-spacing: 0.02em;
+    display: flex;
+    font-size: 12px;
+}
+
+#tel016 a {
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+
+#tel016 .phone {
+    font-size: 35px;
+    transform: rotate(90deg);
+    position: relative;
+    top: -8px;
+    margin-left: 8px;
+}
+
+#tel016 h3 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
 }
 
 #textohome1 {
@@ -46,6 +111,7 @@ iframe {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 165px;
 }
 
 .apartados div h4 {
@@ -107,6 +173,11 @@ iframe {
     transform: rotate(-90deg);
 }
 
+button.ok:hover {
+    color: white;
+    background-color: black;
+}
+
 button.vermas {
     width: fit-content;
     height: 48px;
@@ -134,7 +205,285 @@ button.vermas {
     display: contents;
 }
 
-#home > div:nth-child(1) > div {
+#home.rSn>div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+}
+
+#home.rSn>div:nth-child(2) {
     width: 100%;
-    height: 200px;
+    height: 240px;
+}
+
+#home.rSn>div:nth-child(1) {
+    display: none;
+}
+
+#home.rSn>div:nth-child(2)>div {
+    width: 100%;
+    height: 100%;
+}
+
+#logosara1 {
+    margin-top: 8px;
+    display: none;
+}
+
+#logosara2 {
+    margin-top: 8px;
+    width: 135px;
+    height: 60px;
+}
+
+#home.rSn>div:nth-child(1) {
+    width: 100%;
+}
+
+@media screen and (min-device-width: 759px) {
+    #apartadoscontainer2 {
+        display: none;
+    }
+
+    #home.rSn>div:nth-child(1) {
+        display: flex;
+    }
+
+    #home.rSn>div:nth-child(3) {
+        display: none;
+    }
+
+    .rSn #apartadoscontainer {
+        display: flex;
+    }
+
+    #home.rSn>div:nth-child(2) {
+        width: 90%;
+        height: 390px;
+        max-width: 1072px;
+    }
+
+    #tel016 {
+        background-color: #E20613;
+        color: white;
+        margin-left: 16px;
+        margin-bottom: 16px;
+        width: fit-content;
+        height: fit-content;
+        padding: 12px;
+        padding-bottom: 0;
+        letter-spacing: 0.02em;
+        display: flex;
+    }
+
+    #tel016 .phone {
+        font-size: 40px;
+        transform: rotate(90deg);
+        position: relative;
+        top: -8px;
+        margin-left: 16px;
+    }
+
+    #tel016 h3 {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 24px;
+        letter-spacing: 0.02em;
+    }
+
+    #tel016 {
+        margin-left: 16px;
+        margin-bottom: 16px;
+    }
+
+    #logosara1 {
+        display: flex;
+    }
+
+    #logosara2 {
+        display: none;
+    }
+
+    .dyr #photoencabezadocontainer {
+        background-image: url("../img/foto8.png");
+    }
+
+    .nTv #photoencabezadocontainer {
+        background-image: url("../img/foto9.png");
+    }
+
+    .dSv #photoencabezadocontainer {
+        background-image: url("../img/foto10.png");
+    }
+
+    .cTd #photoencabezadocontainer {
+        background-image: url("../img/foto11.png");
+    }
+
+    .volun #photoencabezadocontainer {
+        background-image: url("../img/foto13.png");
+    }
+
+    .gracias #photoencabezadocontainer {
+        background-image: url("../img/foto15.png");
+    }
+
+    .volun.sDa #photoencabezadocontainer {
+        background-image: url("../img/foto16.png");
+    }
+
+    #photoencabezadocontainer {
+        display: flex;
+        justify-content: flex-start;
+        max-width: 1072px;
+        width: 90%;
+        height: 390px;
+        background-image: url("../img/foto7.png");
+        background-size: cover;
+        background-position: center;
+        align-items: flex-end;
+    }
+
+    #fotoencabezado {
+        display: none;
+    }
+
+    #noestassola h3 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 44px;
+        -webkit-text-stroke: thin;
+        margin-left: 0;
+    }
+
+    #textohome1 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #apartadoscontainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #restocontainer {
+        max-width: 1072px;
+        width: 90%;
+    }
+
+    .apartados {
+        margin-left: 0;
+        margin-right: 0;
+        min-width: 520px;
+    }
+}
+
+@media screen and (min-device-width: 1192px) {
+    .apartados {
+        max-width: 520px;
+    }
+}
+
+@media screen and (max-device-width: 1192px) and (min-device-width: 760px) {
+    .apartados {
+        width: 100%;
+    }
+
+    #photoencabezadocontainer {
+        width: 100%;
+    }
+}
+
+@media screen and (min-device-width: 375px) and (max-device-width: 759px) {
+    .dyr #photoencabezadocontainer {
+        background-image: url("../img/foto8.png");
+    }
+
+    .nTv #photoencabezadocontainer {
+        background-image: url("../img/foto9.png");
+    }
+
+    .dSv #photoencabezadocontainer {
+        background-image: url("../img/foto10.png");
+    }
+
+    .cTd #photoencabezadocontainer {
+        background-image: url("../img/foto11.png");
+    }
+
+    .volun #photoencabezadocontainer {
+        background-image: url("../img/foto13.png");
+    }
+
+    .gracias #photoencabezadocontainer {
+        background-image: url("../img/foto15.png");
+    }
+
+    .volun.sDa #photoencabezadocontainer {
+        background-image: url("../img/foto16.png");
+    }
+
+    #photoencabezadocontainer {
+        display: flex;
+        justify-content: flex-start;
+        max-width: 1072px;
+        width: 100%;
+        height: 240px;
+        background-image: url("../img/foto7.png");
+        background-size: cover;
+        background-position: center;
+        align-items: flex-end;
+    }
+
+    #fotoencabezado {
+        display: none;
+    }
+}
+
+@media screen and (max-device-width: 375px) {
+
+    .dyr #photoencabezadocontainer {
+        background-image: url("../img/foto6.png");
+    }
+
+    .nTv #photoencabezadocontainer {
+        background-image: url("../img/foto2.png");
+    }
+
+    .dSv #photoencabezadocontainer {
+        background-image: url("../img/foto4.png");
+    }
+
+    .cTd #photoencabezadocontainer {
+        background-image: url("../img/foto12.png");
+    }
+
+    .gracias #photoencabezadocontainer {
+        background-image: url("../img/foto5.png");
+    }
+
+    .volun #photoencabezadocontainer {
+        background-image: url("../img/foto14.png");
+    }
+
+    .volun.sDa #photoencabezadocontainer {
+        background-image: url("../img/foto17.png");
+    }
+
+    #photoencabezadocontainer {
+        display: flex;
+        justify-content: flex-start;
+        max-width: 1072px;
+        width: 100%;
+        height: 240px;
+        background-image: url("../img/foto1.png");
+        background-size: cover;
+        background-position: center;
+        align-items: flex-end;
+    }
+
+    #fotoencabezado {
+        display: none;
+    }
 }

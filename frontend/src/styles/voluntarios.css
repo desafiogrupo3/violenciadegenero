@@ -1,6 +1,5 @@
 #form-voluntarios {
     display: flex;
-    display: flex;
     flex-direction: column;
     align-items: stretch;
     margin: 25px;
@@ -69,4 +68,33 @@
     background-color: #E20613;
     color: black;
     border-radius: 2px;
+}
+
+
+@media screen and (min-device-width: 759px) {
+    #gracias-volver {
+        display: none;
+    }
+    
+    #home.gracias{
+        margin-bottom: 301px;
+    }
+    #form-voluntarios {
+        width: 586px;
+        margin-left: 0;
+        align-items: center;
+    }
+
+    #form-voluntarios button {
+        width: 343px;
+    }
+
+    #form-voluntarios input {
+        width: 100%;
+    }
+
+    #form-voluntarios label {
+        width: 100%;
+        align-self: flex-start;
+    }
 }

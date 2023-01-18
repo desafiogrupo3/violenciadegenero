@@ -8,6 +8,7 @@ import Voluntarios from '../components/Voluntarios'
 import ConoceTusDerechos from '../components/ConoceTusDerechos'
 import Detectar from '../components/Detectar'
 import MuchasGracias from '../components/MuchasGracias'
+import ServirDeAyuda from '../components/ServirDeAyuda'
 
 export const Rutas = () => {
 
@@ -23,6 +24,7 @@ export const Rutas = () => {
                 <Route path="/conocetusderechos" element={<ConoceTusDerechos />} />
                 <Route path="/voluntarios" element={<Voluntarios />} />
                 <Route path="/muchasgracias" element={<MuchasGracias />} />
+                <Route path="/quieroayudar" element={<ServirDeAyuda />} />
             </Routes>
         </div>
     )
