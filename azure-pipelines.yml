@@ -18,9 +18,7 @@ stages:
       inputs:
         script: |
           cd frontend/
-          npm install react-leaftlet --save
-          npm i leaflet
-          npm install --legacy-peer-deps --global-style
+          npm install 
           npm run build --loglevel verbose
           echo "--------------------------"
           echo $(System.DefaultWorkingDirectory)
