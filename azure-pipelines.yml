@@ -10,10 +10,13 @@ steps:
     versionSpec: '18.x'
   displayName: 'Install Node.js'
 
-- script: |
-    cd frontend/
-    npm install --legacy-peer-deps --global-style
-    npm run build --loglevel verbose
+- task: CmdLine@2
+      displayName: 'npm install and build'
+      inputs:
+        script: |
+          cd frontend/
+          npm install --legacy-peer-deps --global-style
+          npm run build --loglevel verbose
   displayName: 'npm install and build'
 
 - task: ArchiveFiles@2
