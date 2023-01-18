@@ -18,8 +18,10 @@ stages:
       inputs:
         script: |
           cd frontend/
-          npm install 
+          npm install --legacy-peer-deps --global-style
           npm run build --loglevel verbose
+          yarn add leaflet
+          npm i leaflet
           echo "--------------------------"
           echo $(System.DefaultWorkingDirectory)
     - task: ArchiveFiles@2
