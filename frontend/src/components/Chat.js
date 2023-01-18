@@ -8,7 +8,7 @@ const Chat = () => {
     const [preguntas, setPreguntas] = useState([])
     const [contador, setContador] = useState(0)
     const [contadorCat, setContadorCat] = useState(0)
-    const categoria = ['fisica', 'sexual', 'psicologica', 'economica', 'redesSociales']
+    const categoria= ['fisica', 'sexual', 'psicologica', 'economica', 'redesSociales']
     const [isTest, setIsTest] = useState(false)
     const preguntasTest = {
         fisica: [
@@ -66,9 +66,9 @@ const Chat = () => {
             setContador(contador + 1)
         } else {
             setContador(0)
-            setContadorCat(contadorCat + 1)
+            setContadorCat(contadorCat+1)
         }
-        if (contadorCat === 5) {
+        if(contadorCat === 5) {
             setContadorCat(0)
             setContador(0)
         }
