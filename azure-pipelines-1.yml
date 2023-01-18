@@ -37,3 +37,11 @@ stages:
         ArtifactName: '$(Build.BuildId).zip'
         publishLocation: 'Container'
 
+
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'DockerVG'
+        repository: 'gonzalobordas/backend'
+        command: 'buildAndPush'
+        buildContext: 'backend/'
+        Dockerfile: 'Dockerfiles/backend.Dockerfile'
