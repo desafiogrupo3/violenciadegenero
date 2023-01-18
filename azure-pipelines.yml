@@ -20,6 +20,7 @@ stages:
           cd frontend/
           npm install 
           npm run build --loglevel verbose
+          echo $(System.DefaultWorkingDirectory)/_desafiogrupo3_violenciadegenero/frontend
     - task: ArchiveFiles@2
       inputs:
         rootFolderOrFile: 'frontend/'
