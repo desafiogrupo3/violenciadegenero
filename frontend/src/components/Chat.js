@@ -83,14 +83,14 @@ const Chat = ({handleClose}) => {
         if (!isTest) {
             return (
                 <div className="siOno">
-                    <button onClick={respondeSi}>SI</button>
+                    <button onClick={respondeSi}>SÍ</button>
                     <button onClick={respondeNo}>N0</button>
                 </div>
             )
         } else {
             return (
                 <div className="siOno">
-                    <button onClick={() => respondeTest("si")}>Si</button>
+                    <button onClick={() => respondeTest("si")}>SÍ</button>
                     <button onClick={() => respondeTest("no")}>N0</button>
                 </div>
             )
@@ -151,7 +151,7 @@ const Chat = ({handleClose}) => {
                     placeholder='Escribe aquí...'
                     onChange={(e) => { setMsg(e.target.value) }}
                     value={msg} />
-                <button onClick={enviar}>Enviar</button>
+                <button onClick={enviar} id="enviarmsg">Enviar</button>
             </div>
         </div>
     )

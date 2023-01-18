@@ -12,6 +12,17 @@
 .navbarDesktop .logo {
     height: 36.36px;
     width: 154.28px;
+    display: flex;
+    align-items: center;
+}
+
+nav.navbarDesktop img.navbar-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 60px;
+    color: white;
 }
 
 .navbarDesktop .link {

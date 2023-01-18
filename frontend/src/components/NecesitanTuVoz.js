@@ -13,11 +13,14 @@ const NecesitanTuVoz = (props) => {
             <div id="photoencabezadocontainer">
                 <img id="fotoencabezado" src={foto} alt="" width={"100%"} />
                 <div id="tel016">
-                    <div>
-                        <h3>LLAMA AL 016</h3>
-                        <p>Gratuito y no deja rasto</p>
-                    </div>
-                    <div className='phone'><AiFillPhone /></div>
+                    <a href="tel:016">
+                        <div>
+                            <h3>LLAMA AL 016</h3>
+                            <p>Gratuito y no deja rasto</p>
+                        </div>
+
+                        <div className='phone'><AiFillPhone /></div>
+                    </a>
                 </div>
             </div>
             <div>
@@ -62,7 +65,7 @@ const NecesitanTuVoz = (props) => {
                             <h4>Sirve de apoyo</h4>
                             <p>Crea una red segura entre familiares y amistades cercanas para mantener el contacto en todo momento.</p>
                         </div>
-                        <NavLink to='/necesitantuvoz'><button className="vermas">QUIERO SERVIR DE APOYO</button></NavLink>
+                        <NavLink to='/quieroayudar'><button className="vermas ok">QUIERO SERVIR DE APOYO</button></NavLink>
                     </div>
                 </div></div>
             <a href="https://www.amazon.es/"><button id="salirrapido"> <strong>SALIR RÁPIDO</strong>  </button></a>

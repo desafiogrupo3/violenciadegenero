@@ -14,12 +14,18 @@ const derechosYrecursos = () => {
             <div id="photoencabezadocontainer">
                 <img id="fotoencabezado" src={foto} alt="" width={"100%"} />
                 <div id="tel016">
-                    <div>
-                        <h3>LLAMA AL 016</h3>
-                        <p>Gratuito y no deja rasto</p>
-                    </div>
-                    <div className='phone'><AiFillPhone /></div>
+                    <a href="tel:016">
+                        <div>
+                            <h3>LLAMA AL 016</h3>
+                            <p>Gratuito y no deja rasto</p>
+                        </div>
+
+                        <div className='phone'><AiFillPhone /></div>
+                    </a>
                 </div>
+            </div>
+            <div>
+                <img id="logosara2" src={logo_sara} alt="" />
             </div>
             <div id="restocontainer">
                 <div id="noestassola">
@@ -42,7 +48,7 @@ const derechosYrecursos = () => {
                             <h4>Recursos y ayudas Sierra Norte</h4>
                             <p>Te mostramos una lista de colaboradores avalados por Cruz Roja en la Sierra Norte de Madrid.</p>
                         </div>
-                        <NavLink to='/recursossierranorte'><button className="vermas">VER RECURSOS</button></NavLink>
+                        <NavLink to='/recursossierranorte'><button className="vermas ok">VER RECURSOS</button></NavLink>
                     </div>
                     <div className="apartados">
                         <div>
@@ -56,7 +62,7 @@ const derechosYrecursos = () => {
                             <h4>Conoce tus derechos</h4>
                             <p>Tus derechos como mujer son esenciales. Conoce cuáles son y cómo Cruz Roja puede ayudarte.</p>
                         </div>
-                        <NavLink to='/conocetusderechos'><button className="vermas">CONOCER MIS DERECHOS</button></NavLink>
+                        <NavLink to='/conocetusderechos'><button className="vermas ok">CONOCER MIS DERECHOS</button></NavLink>
                     </div>
                 </div>
             </div>

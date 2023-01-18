@@ -25,11 +25,14 @@ const Home = (props) => {
             <div id="photoencabezadocontainer">
                 <img id="fotoencabezado" src={foto} alt="" width={"100%"} />
                 <div id="tel016">
-                    <div>
-                        <h3>LLAMA AL 016</h3>
-                        <p>Gratuito y no deja rasto</p>
-                    </div>
-                    <div className='phone'><AiFillPhone /></div>
+                    <a href="tel:016">
+                        <div>
+                            <h3>LLAMA AL 016</h3>
+                            <p>Gratuito y no deja rasto</p>
+                        </div>
+
+                        <div className='phone'><AiFillPhone /></div>
+                    </a>
                 </div>
             </div>
             <div>
@@ -50,7 +53,7 @@ const Home = (props) => {
                             <h4>Derechos y recursos disponibles para las víctimas.</h4>
                             <p>En este apartado encontrarás todos los recursos a tu disposición de forma totalmente confidencial.</p>
                         </div>
-                        <NavLink to='/derechos'><button className="vermas">VER MÁS</button></NavLink>
+                        <NavLink to='/derechos'><button className="vermas ok">VER MÁS</button></NavLink>
 
                     </div>
 
@@ -60,7 +63,7 @@ const Home = (props) => {
                             <p>Si conoces alguna mujer que pueda estar siendo víctima de violencia de género tu ayuda puede salvarla.</p>
                         </div>
 
-                        <NavLink to='/necesitantuvoz'><button className="vermas">CÓMO ACTUAR</button></NavLink>
+                        <NavLink to='/necesitantuvoz'><button className="vermas ok">CÓMO ACTUAR</button></NavLink>
                     </div>
 
                     <div className="apartados">
@@ -68,7 +71,7 @@ const Home = (props) => {
                             <h4>¿Cómo detectar si eres víctima de violencia de género?</h4>
                             <p>Señales que pueden dar respuesta a esta pregunta.</p>
                         </div>
-                        <NavLink to='/detectarsieresvictima'><button className="vermas">QUIERO SABER MÁS</button></NavLink>
+                        <NavLink to='/detectarsieresvictima'><button className="vermas ok">QUIERO SABER MÁS</button></NavLink>
                     </div>
 
                     <div className="apartados ultimo">
@@ -76,7 +79,7 @@ const Home = (props) => {
                             <h4>Necesitamos tu ayuda como voluntario/a de Cruz Roja</h4>
                             <p>Puedes ayudarnos de muchas maneras diferentes.</p>
                         </div>
-                        <NavLink to='/voluntarios'><button className="vermas">COMO COLABORAR</button></NavLink>
+                        <NavLink to='/voluntarios'><button className="vermas ok">COMO COLABORAR</button></NavLink>
                     </div>
                 </div>
             </div>

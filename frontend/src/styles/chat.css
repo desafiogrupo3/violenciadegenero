@@ -29,13 +29,15 @@ div.siOno {
 }
 
 div.siOno button {
-    background-color:#E4656C;
+    background-color: white;
     width: 55px;
-    height: 55px;
+    height: 40px;
     border: none;
-    color: white;
-    border-radius: 100%;
-    font-weight: 600;
+    color: #E20613;
+    border-radius: 8px;
+    border: 1px solid #E20613;
+    font-weight: 800;
+    -webkit-text-stroke: thin;
 }
 
 .user {
@@ -69,6 +71,16 @@ div.chat input {
     padding-left: 16px;
     padding-bottom: 33px;
     width: 100%;
+}
+
+button#enviarmsg{
+    border:none;
+    margin-top: 13px;
+    background-color: #E20613;
+    text-transform: uppercase;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 /* div.chat input::placeholder {

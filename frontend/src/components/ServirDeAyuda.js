@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import foto from '../img/foto2.png'
 import logo_sara from '../img/logo_sara.png'
 
-const Voluntarios = (props) => {
+const ServirDeAyuda = (props) => {
 
     const [option1, setoption1] = useState('option')
     const [option2, setoption2] = useState('option')
@@ -39,7 +39,7 @@ const Voluntarios = (props) => {
     }
 
     return (
-        <div id="home" className="volun">
+        <div id="home" className="volun sDa">
             <div>
                 <img id="logosara1" src={logo_sara} alt="" />
             </div>
@@ -51,10 +51,11 @@ const Voluntarios = (props) => {
             </div>
             <div id="restocontainer">
                 <div id="noestassola">
-                    <h3>HAZTE VOLUNTARIO/A DE CRUZ ROJA</h3>
+                    <h3>SIRVE DE APOYO A TU FAMILIAR O AMIGA</h3>
                 </div>
                 <div id="textohome1">
-                    <p>Necesitamos tu colaboración en la Sierra Norte y puedes ayudarnos de muchas maneras.</p>
+                    <p>Esa pesona necesita tu colaboración y puedes ayudarla de muchas maneras.
+                    </p>
                     <p>Rellena el siguiente formulario y recibirás toda la información en tu e-mail.</p>
                 </div>
                 <div id="form-voluntarios">
@@ -92,4 +93,4 @@ const Voluntarios = (props) => {
     );
 };
 
-export default Voluntarios;
+export default ServirDeAyuda;

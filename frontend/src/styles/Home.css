@@ -9,9 +9,35 @@
     font-family: 'Montserrat';
 }
 
-.rSn #apartadoscontainer{
+#chatdeskpot {
+    position: fixed;
+    right: -174px;
+    top: 300px;
+    background: #E20613;
+    box-shadow: -9px 7px 28px rgb(0 0 0 / 30%);
+    border-radius: 8px 8px 0px 0px;
+    color: white;
+    border: none;
+    width: 420px;
+    height: 70px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    transform: rotate(-90deg);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#chatdeskpot:hover{
+    color: black;
+}
+
+.rSn #apartadoscontainer {
     display: none;
 }
+
 iframe {
     border: 0px;
 }
@@ -41,6 +67,12 @@ iframe {
     letter-spacing: 0.02em;
     display: flex;
     font-size: 12px;
+}
+
+#tel016 a {
+    display: flex;
+    text-decoration: none;
+    color: white;
 }
 
 #tel016 .phone {
@@ -141,8 +173,9 @@ iframe {
     transform: rotate(-90deg);
 }
 
-button.vermas:disabled {
-    background-color: grey;
+button.ok:hover {
+    color: white;
+    background-color: black;
 }
 
 button.vermas {
@@ -186,7 +219,7 @@ button.vermas {
     display: none;
 }
 
-#home.rSn>div:nth-child(2)>div{
+#home.rSn>div:nth-child(2)>div {
     width: 100%;
     height: 100%;
 }
@@ -202,7 +235,7 @@ button.vermas {
     height: 60px;
 }
 
-#home.rSn > div:nth-child(1) {
+#home.rSn>div:nth-child(1) {
     width: 100%;
 }
 
@@ -219,10 +252,11 @@ button.vermas {
         display: none;
     }
 
-    .rSn #apartadoscontainer{
+    .rSn #apartadoscontainer {
         display: flex;
     }
-    #home.rSn > div:nth-child(2) {
+
+    #home.rSn>div:nth-child(2) {
         width: 90%;
         height: 390px;
         max-width: 1072px;
@@ -279,6 +313,22 @@ button.vermas {
 
     .dSv #photoencabezadocontainer {
         background-image: url("../img/foto10.png");
+    }
+
+    .cTd #photoencabezadocontainer {
+        background-image: url("../img/foto11.png");
+    }
+
+    .volun #photoencabezadocontainer {
+        background-image: url("../img/foto13.png");
+    }
+
+    .gracias #photoencabezadocontainer {
+        background-image: url("../img/foto15.png");
+    }
+
+    .volun.sDa #photoencabezadocontainer {
+        background-image: url("../img/foto16.png");
     }
 
     #photoencabezadocontainer {
@@ -358,6 +408,22 @@ button.vermas {
         background-image: url("../img/foto10.png");
     }
 
+    .cTd #photoencabezadocontainer {
+        background-image: url("../img/foto11.png");
+    }
+
+    .volun #photoencabezadocontainer {
+        background-image: url("../img/foto13.png");
+    }
+
+    .gracias #photoencabezadocontainer {
+        background-image: url("../img/foto15.png");
+    }
+
+    .volun.sDa #photoencabezadocontainer {
+        background-image: url("../img/foto16.png");
+    }
+
     #photoencabezadocontainer {
         display: flex;
         justify-content: flex-start;
@@ -387,6 +453,22 @@ button.vermas {
 
     .dSv #photoencabezadocontainer {
         background-image: url("../img/foto4.png");
+    }
+
+    .cTd #photoencabezadocontainer {
+        background-image: url("../img/foto12.png");
+    }
+
+    .gracias #photoencabezadocontainer {
+        background-image: url("../img/foto5.png");
+    }
+
+    .volun #photoencabezadocontainer {
+        background-image: url("../img/foto14.png");
+    }
+
+    .volun.sDa #photoencabezadocontainer {
+        background-image: url("../img/foto17.png");
     }
 
     #photoencabezadocontainer {

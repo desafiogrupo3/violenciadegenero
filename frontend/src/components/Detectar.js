@@ -14,11 +14,14 @@ const Detectar = () => {
             <div id="photoencabezadocontainer">
                 <img id="fotoencabezado" src={foto} alt="" width={"100%"} />
                 <div id="tel016">
-                    <div>
-                        <h3>LLAMA AL 016</h3>
-                        <p>Gratuito y no deja rasto</p>
-                    </div>
-                    <div className='phone'><AiFillPhone /></div>
+                    <a href="tel:016">
+                        <div>
+                            <h3>LLAMA AL 016</h3>
+                            <p>Gratuito y no deja rasto</p>
+                        </div>
+
+                        <div className='phone'><AiFillPhone /></div>
+                    </a>
                 </div>
             </div>
             <div>
