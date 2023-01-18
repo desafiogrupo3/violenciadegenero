@@ -51,12 +51,12 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='copyright'>
-                    <p>©Cruz Roja Española 2023. Todos los derechos reservados. Pulse aquí para consultar los ASPECTOS LEGALES</p>
+                    <p>©Cruz Roja Española 2023. Todos los derechos reservados. Pulse <a href='#'>aquí</a> para consultar los ASPECTOS LEGALES</p>
                     <p>Agencia de Colocación autorizada con el número 9900000098</p>
                     <div className='politicas'>
-                        <p>Contacto</p>
-                        <p>Política de privacidad</p>
-                        <p>Política de Cookies</p>
+                        <p><a>Contacto</a></p>
+                        <p><a>Política de privacidad</a></p>
+                        <p><a>Política de Cookies</a></p>
                     </div>
                 </div>
             </section>
@@ -76,11 +76,11 @@ const Footer = () => {
                 </ul>
                 <div className='social-media'>
                     <h3>Siguenos</h3>
-                    <img className='icon' src={iconFacebook} />
-                    <img className='icon' src={iconTwitter} />
-                    <img className='icon' src={iconYoutube} />
-                    <img className='icon' src={iconInsta} />
-                    <img className='icon' src={iconSocialMedia} />
+                    <a><img className='icon' src={iconFacebook} /></a>
+                    <a><img className='icon' src={iconTwitter} /></a>
+                    <a><img className='icon' src={iconYoutube} /></a>
+                    <a><img className='icon' src={iconInsta} /></a>
+                    <a><img className='icon' src={iconSocialMedia} /></a>
                 </div>
             </section>
         </footer>

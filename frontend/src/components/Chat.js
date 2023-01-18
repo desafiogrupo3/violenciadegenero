@@ -2,14 +2,15 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Chat = ({handleClose}) => {
+const Chat = ({ handleClose }) => {
     const [msg, setMsg] = useState("");
+    const [option, setOption] = useState();
     const [isMsgSent, setIsMsgSent] = useState(false)
     const [mensajes, setMensajes] = useState([])
     const [preguntas, setPreguntas] = useState([])
     const [contador, setContador] = useState(0)
     const [contadorCat, setContadorCat] = useState(0)
-    const categoria= ['fisica', 'sexual', 'psicologica', 'economica', 'redesSociales']
+    const categoria = ['fisica', 'sexual', 'psicologica', 'economica', 'redesSociales']
     const [isTest, setIsTest] = useState(false)
     const [caso, setCaso] = useState()
 
@@ -46,9 +47,15 @@ const Chat = ({handleClose}) => {
         setIsMsgSent(true)
         setMsg('')
     }
+    function chooseOption(option, caso) {
+        setMensajes(mensajes.concat({ msg: option, from: "user" }))
+        setOption(caso)
+        setIsMsgSent(true)
+        setMsg('')
+    }
 
     useEffect(() => {
-        isMsgSent && respuesta(0)
+        isMsgSent && respuesta(option)
         setIsMsgSent(false)
     }, [isMsgSent])
 
@@ -57,7 +64,7 @@ const Chat = ({handleClose}) => {
     }, [mensajes])
 
     function respondeSi() {
-        setMensajes(mensajes.concat([{ msg: "Si", from: "user" }, { msg: preguntas[1], from: "sara" , enlace: true}]))
+        setMensajes(mensajes.concat([{ msg: "Si", from: "user" }, { msg: preguntas[1], from: "sara", enlace: true }]))
         document.getElementsByClassName("siOno")[document.getElementsByClassName("siOno").length - 1].style.display = 'none'
     }
     function respondeNo() {
@@ -69,9 +76,9 @@ const Chat = ({handleClose}) => {
             setContador(contador + 1)
         } else {
             setContador(0)
-            setContadorCat(contadorCat+1)
+            setContadorCat(contadorCat + 1)
         }
-        if(contadorCat === 5) {
+        if (contadorCat === 5) {
             setContadorCat(0)
             setContador(0)
         }
@@ -123,24 +130,29 @@ const Chat = ({handleClose}) => {
         <div className='chat'>
             <div className="msgsContainer">
                 <div className="sara">Hola, soy SARA. ¿En qué puedo ayudarte? Por favor, introduce brevemente qué te preocupa y veré que puedo hacer. Todavía estoy en desarrollo, por lo que te agradecería que me lo comentases en una única oración. </div>
+                <div className='options'>
+                    <button onClick={e=>chooseOption('familiar o amigo', 0)}>Familiar o Amigo</button>
+                    <button onClick={e=>chooseOption('ayuda', 1)}>Ayuda</button>
+                    <button onClick={e=>chooseOption('dudas', 2)}>Dudas</button>
+                </div>
                 {mensajes.map((mensaje, i) => {
                     if (mensaje.from === "user") {
                         return <div key={i} className={mensaje.from}>
-                            {mensaje.msg} 
+                            {mensaje.msg}
                         </div>
                     } else {
                         return (<div key={i}>
                             <div className={mensaje.from}>
                                 {mensaje.msg}
-                                {mensaje.enlace ? 
+                                {mensaje.enlace ?
                                     <div>
                                         {caso === 0 ? <NavLink onClick={handleClose} to="/necesitantuvoz">Pincha aquí</NavLink> : null}
                                         {caso === 1 ? <NavLink onClick={handleClose} to="/recursossierranorte">Pincha aquí</NavLink> : null}
                                     </div>
-                                : null}
+                                    : null}
                             </div>
                             {mensaje.options ? pintaSiOno() : null}
-                            
+
                         </div>)
                     }
                 })}
