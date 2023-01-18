@@ -6,6 +6,37 @@ const Chat = () => {
     const [isMsgSent, setIsMsgSent] = useState(false)
     const [mensajes, setMensajes] = useState([])
     const [preguntas, setPreguntas] = useState([])
+    const [contador, setContador] = useState(0)
+    const [contadorCat, setContadorCat] = useState(0)
+    const categoria = ['fisica', 'sexual', 'psicologica', 'economica', 'redesSociales']
+    const [isTest, setIsTest] = useState(false)
+    const preguntasTest = {
+        fisica: [
+            '¿Alguna vez te ha empujado o pegado tu pareja?',
+            '¿Alguna vez has tenido que ocultar moratones o heridas que te haya hecho tu pareja?',
+            '¿Alguna vez has tenido que acudir al médico como consecuencia de una disputa con tu pareja?'
+        ],
+        sexual: [
+            '¿Alguna vez te has sentido presionada para mantener relaciones sexuales con tu pareja?',
+            '¿Sientes que al mantener relaciones eres tú quien tiene que complacerle a él?',
+            '¿Tu pareja te impide usar métodos anticonceptivos, o condiciona su uso?'
+        ],
+        psicologica: [
+            '¿Sientes que tu pareja se interpone entre tus amigos o familiares y tú?',
+            '¿Alguna vez te ha dicho cómo deberías vestirte o te has vestido diferente por miedo a como reaccionaría?',
+            '¿Tienes miedo a mostrar tu opinión en público por si no le gusta lo que dices?'
+        ],
+        economica: [
+            '¿Tu pareja te impide trabajar?',
+            '¿Sientes que tu pareja controla de alguna forma tu dinero?',
+            '¿Tu pareja te insiste o te obliga a tener acceso a tu cuenta bancaria?'
+        ],
+        redesSociales: [
+            '¿Tu pareja mira tu móvil sin tu permiso',
+            '¿Crees que cuestiona las fotos que subes a redes sociales? Si no tienes redes sociales, marca que no.',
+            '¿Tu pareja ha difundido fotos o comentarios sobre ti?'
+        ]
+    }
 
     function enviar() {
         setMensajes(mensajes.concat({ msg: msg, from: "user" }))
@@ -30,15 +61,39 @@ const Chat = () => {
         setMensajes(mensajes.concat([{ msg: "No", from: "user" }, { msg: "¿Hay alguna otra cosa en la que te pueda ayudar? ", from: "sara" }]))
         document.getElementsByClassName("siOno")[document.getElementsByClassName("siOno").length - 1].style.display = 'none'
     }
-
-    function pinstaSiOno() {
-        return (
-            <div className="siOno">
-                <button onClick={respondeSi}>SI</button>
-                <button onClick={respondeNo}>N0</button>
-            </div>
-        )
+    function respondeTest(res) {
+        if (contador < 2) {
+            setContador(contador + 1)
+        } else {
+            setContador(0)
+            setContadorCat(contadorCat + 1)
+        }
+        if (contadorCat === 5) {
+            setContadorCat(0)
+            setContador(0)
+        }
+        setMensajes(mensajes.concat([{ msg: res, from: "user" }, { msg: preguntasTest[`${categoria[contadorCat]}`][contador], from: "sara", options: true }]))
+        document.getElementsByClassName("siOno")[document.getElementsByClassName("siOno").length - 1].style.display = 'none'
     }
+
+    function pintaSiOno() {
+        if (!isTest) {
+            return (
+                <div className="siOno">
+                    <button onClick={respondeSi}>SI</button>
+                    <button onClick={respondeNo}>N0</button>
+                </div>
+            )
+        } else {
+            return (
+                <div className="siOno">
+                    <button onClick={() => respondeTest("si")}>Si</button>
+                    <button onClick={() => respondeTest("no")}>N0</button>
+                </div>
+            )
+        }
+    }
+
     function respuesta(res) {
         switch (res) {
             case 0:
@@ -50,7 +105,10 @@ const Chat = () => {
                 setMensajes([...mensajes, { msg: "Por lo que entiendo, creo que te vendría bien un poco de ayuda externa. ¿Quieres ver que recursos tienes a tu disposición?", from: "sara", options: true }])
                 break;
             case 2:
-                setMensajes([...mensajes, { msg: "Es una situación complicada, a veces difícil reconocer lo que tenemos delante. ¿Me dejarías hacerte más preguntas para conocer mejor tu situación?", from: "sara" }])
+                setIsTest(true)
+                setPreguntas(["Es una situación complicada, a veces difícil reconocer lo que tenemos delante. ¿Me dejarías hacerte más preguntas para conocer mejor tu situación?", "¿Alguna vez te ha empujado o pegado tu pareja?.", "¿Alguna vez has tenido que ocultar moratones o heridas que te haya hecho tu pareja?",
+                    "¿Alguna vez has tenido que acudir al médico como consecuencia de una disputa con tu pareja?"])
+                setMensajes([...mensajes, { msg: "Es una situación complicada, a veces difícil reconocer lo que tenemos delante. ¿Me dejarías hacerte más preguntas para conocer mejor tu situación?", from: "sara", options: true }])
                 break;
             default:
                 break;
@@ -67,7 +125,7 @@ const Chat = () => {
                     } else {
                         return (<div key={i}>
                             <div className={mensaje.from}>{mensaje.msg}</div>
-                            {mensaje.options ? pinstaSiOno() : null}
+                            {mensaje.options ? pintaSiOno() : null}
                         </div>)
                     }
                 })}
