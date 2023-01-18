@@ -18,7 +18,8 @@ stages:
       inputs:
         script: |
           cd frontend/
-          npm install -g npm@9.3.1
+          npm install react-leaftlet --save
+          npm i leaflet
           npm install --legacy-peer-deps --global-style
           npm run build --loglevel verbose
           echo "--------------------------"
@@ -35,9 +36,9 @@ stages:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: '$(Build.BuildId).zip'
         publishLocation: 'Container'
-
     - task: Docker@2
       inputs:
+        script:
         containerRegistry: 'DockerVG'
         repository: 'gonzalobordas/frontend'
         command: 'buildAndPush'
