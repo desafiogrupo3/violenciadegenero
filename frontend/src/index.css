@@ -14,8 +14,10 @@ body {
 
 @import './styles/menu.css';
 @import './styles/navbar.css';
+@import './styles/navbarDesktop.css';
 @import './styles/Home.css';
 @import './styles/chat.css';
 @import './styles/recursos.css';
 @import './styles/voluntarios.css';
+@import './styles/footer.css';
 
