@@ -1,7 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Chat = () => {
+const Chat = ({handleClose}) => {
     const [msg, setMsg] = useState("");
     const [isMsgSent, setIsMsgSent] = useState(false)
     const [mensajes, setMensajes] = useState([])
@@ -10,6 +11,8 @@ const Chat = () => {
     const [contadorCat, setContadorCat] = useState(0)
     const categoria = ['fisica', 'sexual', 'psicologica', 'economica', 'redesSociales']
     const [isTest, setIsTest] = useState(false)
+    const [caso, setCaso] = useState()
+
     const preguntasTest = {
         fisica: [
             '¿Alguna vez te ha empujado o pegado tu pareja?',
@@ -45,7 +48,7 @@ const Chat = () => {
     }
 
     useEffect(() => {
-        isMsgSent && respuesta(2)
+        isMsgSent && respuesta(0)
         setIsMsgSent(false)
     }, [isMsgSent])
 
@@ -54,7 +57,7 @@ const Chat = () => {
     }, [mensajes])
 
     function respondeSi() {
-        setMensajes(mensajes.concat([{ msg: "Si", from: "user" }, { msg: preguntas[1], from: "sara" }]))
+        setMensajes(mensajes.concat([{ msg: "Si", from: "user" }, { msg: preguntas[1], from: "sara" , enlace: true}]))
         document.getElementsByClassName("siOno")[document.getElementsByClassName("siOno").length - 1].style.display = 'none'
     }
     function respondeNo() {
@@ -95,9 +98,10 @@ const Chat = () => {
     }
 
     function respuesta(res) {
+        setCaso(res)
         switch (res) {
             case 0:
-                setPreguntas(["Vaya, parece que conoces a alguien que lo está pasando mal. ¿Es así?", "Me alegro de poder ayudarte. Si haces click en este enlace podrás obtener información sobre cómo puedes ayudar desde tu posición. "])
+                setPreguntas(["Vaya, parece que conoces a alguien que lo está pasando mal. ¿Es así?", "Me alegro de poder ayudarte. Si haces click en el siguiente enlace podrás obtener información sobre cómo puedes ayudar desde tu posición. "])
                 setMensajes(mensajes.concat({ msg: "Vaya, parece que conoces a alguien que lo está pasando mal. ¿Es así?", from: "sara", options: true }))
                 break;
             case 1:
@@ -121,11 +125,22 @@ const Chat = () => {
                 <div className="sara">Hola, soy SARA. ¿En qué puedo ayudarte? Por favor, introduce brevemente qué te preocupa y veré que puedo hacer. Todavía estoy en desarrollo, por lo que te agradecería que me lo comentases en una única oración. </div>
                 {mensajes.map((mensaje, i) => {
                     if (mensaje.from === "user") {
-                        return <div key={i} className={mensaje.from}>{mensaje.msg}</div>
+                        return <div key={i} className={mensaje.from}>
+                            {mensaje.msg} 
+                        </div>
                     } else {
                         return (<div key={i}>
-                            <div className={mensaje.from}>{mensaje.msg}</div>
+                            <div className={mensaje.from}>
+                                {mensaje.msg}
+                                {mensaje.enlace ? 
+                                    <div>
+                                        {caso === 0 ? <NavLink onClick={handleClose} to="/necesitantuvoz">Pincha aquí</NavLink> : null}
+                                        {caso === 1 ? <NavLink onClick={handleClose} to="/recursossierranorte">Pincha aquí</NavLink> : null}
+                                    </div>
+                                : null}
+                            </div>
                             {mensaje.options ? pintaSiOno() : null}
+                            
                         </div>)
                     }
                 })}
