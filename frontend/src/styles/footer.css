@@ -3,16 +3,19 @@ footer {
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    height: 550px;
 }
 
 footer section.about {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background-color: #fff;
-    height: 472px;
+    height: 100%;
     width: 65%;
     align-items: flex-end;
     padding-top: 80px;
+    padding-bottom: 25px;
 }
 
 footer .about .info {
@@ -53,12 +56,18 @@ footer ul {
 
 footer ul li {
     list-style: none;
+    cursor: pointer;
 }
 
-footer ul li a {
+footer .about .info .lists ul li a {
     font-size: 13px;
     line-height: 15px;
     color: #000;
+    transition: all 200ms;
+}
+footer .about .info .lists ul li a:hover{
+    color: #E20613;
+    font-weight: bold;
 }
 
 footer .about .copyright {
@@ -66,7 +75,40 @@ footer .about .copyright {
     flex-flow: column;
     width: 100%;
     padding-right: 20px;
-    padding-left: 40px;
+    padding-left: 70px;
+}
+
+footer .about .copyright p{
+    font-size: 12px;
+    line-height: 15px;
+}
+
+footer .about .copyright > p:nth-child(2){
+    color: #E20613;
+}
+
+footer .about .copyright p a{
+    color: #E20613;
+    text-decoration: none;
+    transition: all 200ms;
+}
+footer .about .copyright p a:hover{
+    font-weight: bold;
+}
+
+footer .about .copyright .politicas{
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+}
+
+footer .about .copyright .politicas p{
+    margin-right: 20px;
+}
+
+footer .about .copyright .politicas a{
+    color: #000;
+    cursor: pointer;
 }
 
 footer section.otros {
@@ -135,4 +177,5 @@ footer section.otros .social-media img {
     height: 22px;
     margin-right: 8px;
     margin-left: 8px;
+    cursor: pointer;
 }
