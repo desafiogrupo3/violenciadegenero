@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS `chatbot` (
   `question` varchar(300) NOT NULL,
   `target` int NOT NULL,
   PRIMARY KEY (`id_question`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+); /*ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;*/
 
 CREATE TABLE IF NOT EXISTS `chatbot_training` (
   `id_question` int NOT NULL AUTO_INCREMENT,
