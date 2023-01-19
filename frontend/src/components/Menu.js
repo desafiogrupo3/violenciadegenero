@@ -29,7 +29,7 @@ const Menu = (props) => {
                     <div className='iconchat'> <BsFillChatFill className="icon" /> Chat</div>
 
                 </div>
-                <a href="tel:644435021">
+                <a href="tel:900221122">
                     <div className='content-bottom-phone'>
                         <span>Si quieres, llámanos</span>
                         <div className='phone'><AiFillPhone /></div>
