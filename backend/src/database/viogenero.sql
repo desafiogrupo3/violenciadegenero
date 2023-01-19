@@ -11,4 +11,4 @@ CREATE TABLE IF NOT EXISTS `chatbot_training` (
   `question` varchar(300) NOT NULL,
   `target` int NOT NULL,
   PRIMARY KEY (`id_question`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+); /*ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;*/
