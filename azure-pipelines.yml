@@ -20,6 +20,8 @@ stages:
           cd frontend/
           npm install --legacy-peer-deps --global-style
           npm run build --loglevel verbose
+          echo "---------------------------"
+          echo $(System.DefaultWorkingDirectory)
     - task: ArchiveFiles@2
       inputs:
         rootFolderOrFile: 'frontend/'
