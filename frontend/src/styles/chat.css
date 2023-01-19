@@ -40,6 +40,25 @@ div.siOno button {
     -webkit-text-stroke: thin;
 }
 
+div.options {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+}
+
+div.options button {
+    background-color: white;
+    padding: 0px 8px;
+    height: 40px;
+    border: none;
+    color: #E20613;
+    border-radius: 8px;
+    border: 1px solid #E20613;
+    font-weight: 800;
+    -webkit-text-stroke: thin;
+}
+
 .user {
     background: #E4656C;
     color: white;

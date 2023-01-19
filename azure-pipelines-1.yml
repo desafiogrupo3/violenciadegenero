@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-    - main
+    - develop
 stages:
 - stage: __default
   jobs:
@@ -13,18 +13,20 @@ stages:
       inputs:
         versionSpec: '18.x'
       displayName: 'Install Node.js'
+    - task: DownloadSecureFile@1
+      name: EnvFile
+      inputs:
+        secureFile: '.env'
     - task: CmdLine@2
       displayName: 'npm install and build'
       inputs:
         script: |
-          cd frontend/
-          npm install 
-          npm run build --loglevel verbose
-          echo "---------------------------"
-          echo $(System.DefaultWorkingDirectory)
+          cp $(EnvFile.secureFilePath) backend/.env
+          cd backend/
+          npm install
     - task: ArchiveFiles@2
       inputs:
-        rootFolderOrFile: 'frontend/'
+        rootFolderOrFile: 'backend/'
         includeRootFolder: true
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
@@ -34,11 +36,12 @@ stages:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: '$(Build.BuildId).zip'
         publishLocation: 'Container'
+
+
     - task: Docker@2
       inputs:
-        script:
         containerRegistry: 'DockerVG'
-        repository: 'gonzalobordas/frontend'
+        repository: 'gonzalobordas/backend'
         command: 'buildAndPush'
-        buildContext: 'frontend/'
-        Dockerfile: 'Dockerfiles/frontend.Dockerfile'
+        buildContext: 'backend/'
+        Dockerfile: 'Dockerfiles/backend.Dockerfile'
