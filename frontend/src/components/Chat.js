@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 const Chat = ({ handleClose }) => {
     const [msg, setMsg] = useState("");
-    const [option, setOption] = useState();
     const [isMsgSent, setIsMsgSent] = useState(false)
     const [mensajes, setMensajes] = useState([])
     const [preguntas, setPreguntas] = useState([])
@@ -45,18 +44,25 @@ const Chat = ({ handleClose }) => {
     function enviar() {
         setMensajes(mensajes.concat({ msg: msg, from: "user" }))
         setIsMsgSent(true)
-        setMsg('')
-    }
-    function chooseOption(option, caso) {
-        setMensajes(mensajes.concat({ msg: option, from: "user" }))
-        setOption(caso)
-        setIsMsgSent(true)
-        setMsg('')
+
     }
 
     useEffect(() => {
-        isMsgSent && respuesta(option)
-        setIsMsgSent(false)
+        if (isMsgSent) {
+            let datos = {
+                mode: "cors",
+                headers: { "Access-Control-Allow-Origin": "http://estesi-env.eba-znrjhuzp.us-east-1.elasticbeanstalk.com" },
+            };
+            console.log("http://estesi-env.eba-znrjhuzp.us-east-1.elasticbeanstalk.com/prediccion?question=" + msg)
+            fetch("http://estesi-env.eba-znrjhuzp.us-east-1.elasticbeanstalk.com/prediccion?question=" + msg, datos)
+                .then(res => res.json()).then(res => {
+                    respuesta(parseInt(res.respond));
+                    setMsg('')
+                    setIsMsgSent(false)
+                })
+
+        }
+
     }, [isMsgSent])
 
     useEffect(() => {
@@ -130,11 +136,6 @@ const Chat = ({ handleClose }) => {
         <div className='chat'>
             <div className="msgsContainer">
                 <div className="sara">Hola, soy SARA. ¿En qué puedo ayudarte? Por favor, introduce brevemente qué te preocupa y veré que puedo hacer. Todavía estoy en desarrollo, por lo que te agradecería que me lo comentases en una única oración. </div>
-                <div className='options'>
-                    <button onClick={e=>chooseOption('familiar o amigo', 0)}>Familiar o Amigo</button>
-                    <button onClick={e=>chooseOption('ayuda', 1)}>Ayuda</button>
-                    <button onClick={e=>chooseOption('dudas', 2)}>Dudas</button>
-                </div>
                 {mensajes.map((mensaje, i) => {
                     if (mensaje.from === "user") {
                         return <div key={i} className={mensaje.from}>
