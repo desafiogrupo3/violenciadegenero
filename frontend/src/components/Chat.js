@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Chat = ({handleClose}) => {
+const Chat = ({ handleClose }) => {
     const [msg, setMsg] = useState("");
     const [isMsgSent, setIsMsgSent] = useState(false)
     const [mensajes, setMensajes] = useState([])
@@ -44,12 +44,25 @@ const Chat = ({handleClose}) => {
     function enviar() {
         setMensajes(mensajes.concat({ msg: msg, from: "user" }))
         setIsMsgSent(true)
-        setMsg('')
+
     }
 
     useEffect(() => {
-        isMsgSent && respuesta(0)
-        setIsMsgSent(false)
+        if (isMsgSent) {
+            let datos = {
+                mode: "cors",
+                headers: { "Access-Control-Allow-Origin": "http://estesi-env.eba-znrjhuzp.us-east-1.elasticbeanstalk.com" },
+            };
+            console.log("http://estesi-env.eba-znrjhuzp.us-east-1.elasticbeanstalk.com/prediccion?question=" + msg)
+            fetch("http://estesi-env.eba-znrjhuzp.us-east-1.elasticbeanstalk.com/prediccion?question=" + msg, datos)
+                .then(res => res.json()).then(res => {
+                    respuesta(parseInt(res.respond));
+                    setMsg('')
+                    setIsMsgSent(false)
+                })
+
+        }
+
     }, [isMsgSent])
 
     useEffect(() => {
@@ -57,7 +70,7 @@ const Chat = ({handleClose}) => {
     }, [mensajes])
 
     function respondeSi() {
-        setMensajes(mensajes.concat([{ msg: "Si", from: "user" }, { msg: preguntas[1], from: "sara" , enlace: true}]))
+        setMensajes(mensajes.concat([{ msg: "Si", from: "user" }, { msg: preguntas[1], from: "sara", enlace: true }]))
         document.getElementsByClassName("siOno")[document.getElementsByClassName("siOno").length - 1].style.display = 'none'
     }
     function respondeNo() {
@@ -126,21 +139,21 @@ const Chat = ({handleClose}) => {
                 {mensajes.map((mensaje, i) => {
                     if (mensaje.from === "user") {
                         return <div key={i} className={mensaje.from}>
-                            {mensaje.msg} 
+                            {mensaje.msg}
                         </div>
                     } else {
                         return (<div key={i}>
                             <div className={mensaje.from}>
                                 {mensaje.msg}
-                                {mensaje.enlace ? 
+                                {mensaje.enlace ?
                                     <div>
                                         {caso === 0 ? <NavLink onClick={handleClose} to="/necesitantuvoz">Pincha aquí</NavLink> : null}
                                         {caso === 1 ? <NavLink onClick={handleClose} to="/recursossierranorte">Pincha aquí</NavLink> : null}
                                     </div>
-                                : null}
+                                    : null}
                             </div>
                             {mensaje.options ? pintaSiOno() : null}
-                            
+
                         </div>)
                     }
                 })}
