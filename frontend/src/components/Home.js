@@ -28,7 +28,7 @@ const Home = (props) => {
                     <a href="tel:016">
                         <div>
                             <h3>LLAMA AL 016</h3>
-                            <p>Gratuito y no deja rasto</p>
+                            <p>Gratuito y no deja rastro</p>
                         </div>
 
                         <div className='phone'><AiFillPhone /></div>

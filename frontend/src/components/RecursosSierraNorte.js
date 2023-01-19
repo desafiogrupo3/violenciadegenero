@@ -12,6 +12,11 @@ const RecursosSN = () => {
                 <img id="logosara1" src={logo_sara} alt="" />
             </div>
             <Map width={"100%"} height={"200px"}></Map>
+            <div id="leyenda">
+                <div className="leyenda"><div id="verde"></div>Mancomunidad - Servicios Sociales</div>
+                <div className="leyenda"><div id="rojo"></div>Punto de ayuda municipal</div>
+                <div className="leyenda"><div id="azul"></div>Cuartel Guardia Civil</div>
+            </div>
             {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192831.31408033273!2d-3.717341323241185!3d40.95981362486439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd43e119fd216bb7%3A0x7daed32de71906a!2sSierra%20Norte%2C%20Madrid!5e0!3m2!1ses!2ses!4v1673447277598!5m2!1ses!2ses" width="100%" height="200" loading="lazy"></iframe> */}
             <div>
                 <img id="logosara2" src={logo_sara} alt="" />
@@ -53,7 +58,7 @@ const RecursosSN = () => {
                             <p>Hay diversos negocios locales que colaboran para ayudarte día a día.</p>
                         </div>
                         <NavLink to='/recursossierranorte'><button className="vermas" disabled>VER LISTADO</button></NavLink>
-                        
+
                     </div>
                     <div className="apartados">
                         <div>
@@ -62,7 +67,7 @@ const RecursosSN = () => {
                         </div>
                         <NavLink to='/recursossierranorte'><button className="vermas" disabled>VER REFUGIOS</button></NavLink>
 
-                        
+
                     </div>
                     <div className="apartados">
                         <div>
