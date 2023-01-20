@@ -3,7 +3,7 @@ version: '3.1'
 services:
 
   backend:
-    image: gonzalobordas/backend:144
+    image: gonzalobordas/backend:148
     ports:
       - 3001:3001
     networks:
@@ -14,7 +14,7 @@ services:
       #- db
 
   frontend:
-    image: gonzalobordas/frontend:145
+    image: gonzalobordas/frontend:149
     ports: 
       - 80:80
     networks:
